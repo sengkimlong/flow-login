@@ -1,0 +1,6 @@
+{
+  "q1": { "id":1, "label":"It would be: " ,"question":"If I could learn to do anything, what would it be?", "type":"interest" },
+  "q2": { "id":2, "label":"My latest birthday what I have done: " ,"question":"What did you do for your latest birthday?", "type":"interest"},
+  "q3": { "id":3, "label":"The way you get ride of stress: " ,"question":"How do you get ride of your stress ?", "type":"interest" },
+  "q4": { "id":4, "label":"Three things you like to do the most: " ,"question":"Give 3 things you like to do the most ?", "type":"interest"}
+}

@@ -1,0 +1,5 @@
+{
+  "page1": {"id":"1","title":"Introduction", "content":"Hello guys there are a lot of things you can do here."},
+  "page2": {"id":"2","title":"To guide you", "content":"We have three forms that allow  user can ask questions. As a user, you can see the form with the question that you want to ask. And then you can fill your answer with your question you want to ask,then you can click on submit. \n To be clear the answer must be not empty."},
+  "page3": {"id":"3","title":"Contact Us", "content":"Please contact us if you have any questions: \n\r Address: No. 86, Street 99, Phnom Penh, Cambodia \n\r Email: info@team2.com Phone: (855) 023-555-555"}
+}

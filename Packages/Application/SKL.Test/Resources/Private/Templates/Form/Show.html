@@ -1,0 +1,24 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Show form"{form.name}"</f:section>
+
+<f:section name="stylesheet"></f:section>
+
+<f:section name="Content">
+    <f:for each="{form.questions}" as="question">
+        {question.sentence}
+        </f:for>
+	<table>
+		<tr>
+			<th>Name</th>
+			<td>{form.name}
+            <f:form action="create" controller="question" objectName="question">
+                <f:form.textfield property="sentence" />
+                <f:form.hidden property="form" value="{form}" />
+                <f:form.submit value="Submit" />
+            </f:form>
+            </td>
+		</tr>
+	</table>
+	<f:link.action action="index">Back</f:link.action>
+</f:section>

@@ -1,0 +1,8 @@
+TYPO3:
+  Flow:
+    persistence:
+      backendOptions:
+        dbname: 'onlineQuestion'
+        user: 'root'
+        password: 'ess:3ntials'
+        host: '127.0.0.1'

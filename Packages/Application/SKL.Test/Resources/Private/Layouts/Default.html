@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><f:render section="Title" /></title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'CSS/bootstrap.min.css', package: 'SKL.Test')}" >
+		<f:render section="stylesheet" />
+		<f:base />
+	</head>
+	<body>
+
+		<h1 class="text-center"><f:render section="Title" /></h1>
+
+		<f:render section="Content" />
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="{f:uri.resource(path: 'Js/bootstrap.min.js', package: 'SKL.Test')}"></script>
+		<script src="{f:uri.resource(path: 'Js/login.js', package: 'SKL.Test')}"></script>
+		<script src="{f:uri.resource(path: 'Js/functions.js', package: 'SKL.Test')}"></script>
+	</body>
+</html>

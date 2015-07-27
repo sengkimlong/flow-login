@@ -1,0 +1,9 @@
+{
+    "q1": {"id":1, "label":"Your favorite hobbies are :", "question": "What are your hobbies?", "type": "hobby"},
+    "q2": {"id":2, "label":"Your hobby that you like the most is :", "question": "Which hobby is you like the most?", "type":"hobby" },
+    "q5": {"id":3, "label":"You have this hobby :", "question": "How long have you had this hobby?", "type":"hobby" },
+    "q3": {"id":4, "label":"The reason that you like this hobby are :", "question": "Why do you like this hobby", "type":"hobby" },
+    "q4": {"id":5, "label":"You get ride of bad hobby by :", "question": "How will you get ride of bad hobby ?","type":"hobby"},
+    "q6": {"id":6, "label":"Other hobby that you would like to try:", "question": "Are there any hobbies you would like to try?", "type":"hobby"}
+ 
+}

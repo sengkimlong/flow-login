@@ -1,0 +1,115 @@
+Uncaught exception #1238169398 in line 369 of /var/www/flow_login/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Fluid_Core_Parser_TemplateParser.php: Not all tags were closed!
+
+15 TYPO3\Fluid\Core\Parser\TemplateParser_Original::buildObjectTree(array|14|, 2)
+14 TYPO3\Fluid\Core\Parser\TemplateParser_Original::parse("<f:layout name="default" />
+
+<f:section name="stylesheet"><f:section name="stylesheet"><link rel="stylesheet" href="{f:uri.resource(path: 'CSS/style.css', package: 'SKL.Test')}" /></f:section>
+
+<f:section name="Title"></f:section>
+
+<f:section name="Content">
+<nav class="navbar navbar-default">
+  <div class="container">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a href="" class="navbar-brand">Team 2</a>
+      </div> <!-- End navbar-header -->
+
+      <div class="collapse navbar-collapse" id="navigation">
+          <ul class="nav navbar-nav navbar-right">
+              <li id="list-1" class="item active"><a href="">Home</a></li>
+              <li id="list-2" class="item"><a id="form-1" class="list" role="button" >Form 1</a></li>
+              <li id="list-3" class="item"><a id="form-2" class="list" role="button" >Form 2</a></li>
+              <li id="list-4" class="item"><a id="form-3" class="list" role="button" >Form 3</a></li>
+          </ul>
+      </div>
+
+  </div> <!-- End container-fluid -->
+</nav>
+
+<div class="container">
+  <div class="row">
+      <h3 id="listTitle" class="text-center" style="margin-bottom: 20px;margin-top: 0px;"></h3>
+  </div>
+</div>
+
+<div class="container">
+  <div id="questionList" class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="jumbotron" style="padding: 5% 10%;">
+              <h1></h1>
+              <p id="content"></p>
+
+              <p class="text-right"><a id="next" class="btn btn-primary btn-lg" role="button">Next</a>
+              <a id="btn-frm1" class="btn btn-primary btn-lg" role="button" style="visibility:hidden">Go to Form1</a>
+  </p>
+          </div>
+      </div>
+
+      <!-- Question list here -->
+
+  </div>
+  <div id="btn-group" class="text-right">
+      <a href="#scrollup">
+          <button class="btn btn-primary" type="button" name="Submit">Submit</button>
+      </a>
+      <button class="btn btn-danger" type="button" name="Cancel">Cancel</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-8 col-sm-8 col-xs-12">
+          <table id="answerContainer" class="table" style="display: none">
+              <tr>
+                  <th>Header1</th>
+                  <th>Header2</th>
+              </tr>
+          </table>
+      </div>
+  </div>
+
+</div>
+<div class="col-md-12">
+  <a href="#navigation">
+      <button id="scrollup" class="glyphicon glyphicon-arrow-up pull-right" type="button" style="visibility:hidden"></button>
+  </a>
+</div>
+
+
+</f:section>
+")
+13 TYPO3\Fluid\View\AbstractTemplateView::render()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /skl.test/user/success HTTP/1.1
+Host: flow-login.dev
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:28.0) Gecko/20100101 Firefox/28.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://flow-login.dev/skl.test/user/login
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 453
+
+__referrer%5B%40package%5D=SKL.Test&__referrer%5B%40subpackage%5D=&__referrer%5B%40controller%5D=User&__referrer%5B%40action%5D=login&__referrer%5Barguments%5D=YTowOnt9d60fcd1c77e9b934ed58dcf6a1145cc55d9efbcb&__trustedProperties=a%3A2%3A%7Bs%3A9%3A%22loginUser%22%3Ba%3A2%3A%7Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A8%3A%22password%22%3Bi%3A1%3B%7Di%3A0%3Bi%3A1%3B%7Db97cc9967257e201bd05955c3dd6e67241dfd087&loginUser%5Bname%5D=skl&loginUser%5Bpassword%5D=123
+
+HTTP RESPONSE:
+[response was empty]

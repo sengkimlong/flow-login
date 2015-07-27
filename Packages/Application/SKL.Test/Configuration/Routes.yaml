@@ -1,0 +1,8 @@
+-
+  name: 'Welcome'
+  uriPattern: ''
+  defaults:
+    '@package': 'SKL.Test'
+    '@controller': 'Form'
+    '@action': 'index'
+    '@format': 'html'

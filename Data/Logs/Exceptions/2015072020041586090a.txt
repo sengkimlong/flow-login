@@ -1,0 +1,61 @@
+Uncaught exception #1407060572 in line 556 of /var/www/html/flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Fluid_Core_Parser_TemplateParser.php: The ViewHelper "<f:button.action>" could not be resolved.
+Based on your spelling, the system would load the class "TYPO3\Fluid\ViewHelpers\Button\ActionViewHelper", however this class does not exist.
+
+17 TYPO3\Fluid\Core\Parser\TemplateParser_Original::initializeViewHelperAndAddItToStack(TYPO3\Fluid\Core\Parser\ParsingState, "f", "button.action", array|1|)
+16 TYPO3\Fluid\Core\Parser\TemplateParser_Original::openingViewHelperTagHandler(TYPO3\Fluid\Core\Parser\ParsingState, "f", "button.action", " action="login"", FALSE)
+15 TYPO3\Fluid\Core\Parser\TemplateParser_Original::buildObjectTree(array|48|, 2)
+14 TYPO3\Fluid\Core\Parser\TemplateParser_Original::parse("<f:layout name="Default" />
+
+<f:section name="Title">Welcome to our online question</f:section>
+
+<f:section name="Content">
+	<f:if condition="{users}">
+		<f:then>
+			<ul>
+				<f:for each="{users}" as="user">
+					<li>
+						<f:link.action action="show" arguments="{user: user}">{user.name}</f:link.action>
+						<f:link.action action="edit" arguments="{user: user}">Edit</f:link.action>
+						<f:form action="delete" arguments="{user: user}">
+							<f:form.submit value="Delete" />
+						</f:form>
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<p>No users created yet.</p>
+		</f:else>
+	</f:if>
+	<p><f:link.action action="new">Register</f:link.action></p>
+	<f:button.action action="login">Login</f:button.action>
+</f:section>
+")
+13 TYPO3\Fluid\View\AbstractTemplateView::render()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Host: local.flow.dev
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]

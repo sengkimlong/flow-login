@@ -1,0 +1,93 @@
+<f:layout name="Default" />
+
+<f:section name="stylesheet"><link rel="stylesheet" href="{f:uri.resource(path: 'CSS/style.css', package: 'SKL.Test')}" />
+
+</f:section>
+
+<f:section name="Title">Welcome to our online question</f:section>
+
+<f:section name="Content">
+	<!-- <f:if condition="{users}">
+		<f:then>
+			<ul>
+				<f:for each="{users}" as="user">
+					<li>
+						<f:link.action action="show" arguments="{user: user}">{user.name}</f:link.action>
+						<f:link.action action="edit" arguments="{user: user}">Edit</f:link.action>
+						<f:form action="delete" arguments="{user: user}">
+							<f:form.submit value="Delete" />
+						</f:form>
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<p>No users created yet.</p>
+		</f:else>
+	</f:if> -->
+
+	<div class="container" id="loginForm">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+
+				<f:flashMessages class="flashmessages" id="flash" style="list-style-type:none;color:red;"/>
+
+				<div id="messageError" class="alert alert-danger" role="alert"></div>
+
+				<f:form action="create" object="{User}" objectName="newUser">
+			    <table class="table">
+			      <tr>
+			        <td><label for="name">Name: </label></td>
+			        <td>
+								<div class="input-group">
+									<f:form.textfield property="name" id="name" class="form-control" />
+									<span class="input-group-addon"><i class="fa fa-user"></i></span>
+			      		</div>
+							</td>
+						</tr>
+			      <tr>
+			        <td><label for="password">Password: </label></td>
+							<td>
+								<div class="input-group">
+									<f:form.textfield property="password" id="password" type="password" class="form-control"/>
+									<span class="input-group-addon"><i class="fa fa-key"></i></span>
+			      		</div>
+							</td>
+			      </tr>
+						<tr>
+			        <td><label for="confirmPassword">Confirm Password: </label></td>
+							<td>
+								<div class="input-group">
+									<f:form.textfield property="confirmpassword" id="confirmPassword" type="password" class="form-control"/>
+									<span class="input-group-addon"><i class="fa fa-unlock"></i></span>
+			      		</div>
+							</td>
+			      </tr>
+						<tr>
+			        <td><label for="email">Email: </label></td>
+							<td>
+								<div class="input-group">
+									<f:form.textfield property="email" id="email" class="form-control"/>
+									<span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+			      		</div>
+							</td>
+			      </tr>
+						<tr>
+							<td>
+								<f:form.submit value="Register" class="btn btn-primary" id="registerButton"/>
+							</td>
+							<td>
+								<p class="text-right">If you have account, Please <f:link.action action="login">Login</f:link.action> here</p>
+							</td>
+						</tr>
+
+			    </table>
+
+			  </f:form>
+
+
+			</div>
+		</div> <!-- End ROW -->
+	</div> <!-- End CONTAINER -->
+
+</f:section>
