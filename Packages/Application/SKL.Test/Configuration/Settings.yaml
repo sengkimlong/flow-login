@@ -2,7 +2,7 @@ TYPO3:
   Flow:
     persistence:
       backendOptions:
-        dbname: 'onlineQuestion'
+        dbname: 'onlineSurvey'
         user: 'root'
-        password: 'ess:3ntials'
+        password: 'skl'
         host: '127.0.0.1'

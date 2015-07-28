@@ -6,3 +6,15 @@
     '@controller': 'Form'
     '@action': 'index'
     '@format': 'html'
+
+-
+  name: 'Form action'
+  uriPattern: 'forms/{form}'
+  defaults:
+    '@package':     'SKL.Test'
+    '@controller':  'Form'
+    '@action':      'show'
+  routeParts:
+    form:
+      objectType: 'SKL\Test\Domain\Model\Form'
+      uriPattern: '{name}'

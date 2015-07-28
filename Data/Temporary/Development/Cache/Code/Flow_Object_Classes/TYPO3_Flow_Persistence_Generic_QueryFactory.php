@@ -153,5 +153,5 @@ class QueryFactory extends QueryFactory_Original implements \TYPO3\Flow\Object\P
 		}
 			}
 }
-# PathAndFilename: /var/www/html/internship-project-3-team-2/flow_login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Persistence/Generic/QueryFactory.php
+# PathAndFilename: /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Persistence/Generic/QueryFactory.php
 #

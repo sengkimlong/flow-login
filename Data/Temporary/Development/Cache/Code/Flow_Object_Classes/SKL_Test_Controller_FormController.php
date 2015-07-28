@@ -30,6 +30,7 @@ class FormController_Original extends ActionController {
 	 * @return void
 	 */
 	public function showAction(Form $form) {
+		$this->view->assign('forms', $this->formRepository->findAll());
 		$this->view->assign('form', $form);
 	}
 
@@ -77,7 +78,8 @@ class FormController_Original extends ActionController {
 		$this->redirect('index');
 	}
 
-}namespace SKL\Test\Controller;
+}
+namespace SKL\Test\Controller;
 
 use Doctrine\ORM\Mapping as ORM;
 use TYPO3\Flow\Annotations as Flow;
@@ -301,5 +303,5 @@ $this->Flow_Injected_Properties = array (
 );
 	}
 }
-# PathAndFilename: /var/www/html/internship-project-3-team-2/flow_login/Packages/Application/SKL.Test/Classes/SKL/Test/Controller/FormController.php
+# PathAndFilename: /var/www/html/flow-login/Packages/Application/SKL.Test/Classes/SKL/Test/Controller/FormController.php
 #

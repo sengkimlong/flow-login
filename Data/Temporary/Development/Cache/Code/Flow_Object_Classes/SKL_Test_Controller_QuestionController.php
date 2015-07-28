@@ -41,10 +41,10 @@ class QuestionController_Original extends ActionController {
 	}
 
     /**
-     * @param Question $question
+     * @param Question $newQuestion
      */
-	public function createAction(Question $question = NULL) {
-        $this->questionRepository->add($question);
+	public function createAction(Question $newQuestion = NULL) {
+        $this->questionRepository->add($newQuestion);
         $this->redirect('index', 'Form');
 	}
 
@@ -76,7 +76,8 @@ class QuestionController_Original extends ActionController {
 		$this->redirect('index');
 	}
 
-}namespace SKL\Test\Controller;
+}
+namespace SKL\Test\Controller;
 
 use Doctrine\ORM\Mapping as ORM;
 use TYPO3\Flow\Annotations as Flow;
@@ -300,5 +301,5 @@ $this->Flow_Injected_Properties = array (
 );
 	}
 }
-# PathAndFilename: /var/www/html/internship-project-3-team-2/flow_login/Packages/Application/SKL.Test/Classes/SKL/Test/Controller/QuestionController.php
+# PathAndFilename: /var/www/html/flow-login/Packages/Application/SKL.Test/Classes/SKL/Test/Controller/QuestionController.php
 #

@@ -357,5 +357,5 @@ $this->Flow_Injected_Properties = array (
 );
 	}
 }
-# PathAndFilename: /var/www/html/internship-project-3-team-2/flow_login/Packages/Framework/TYPO3.Eel/Classes/TYPO3/Eel/Helper/I18nHelper.php
+# PathAndFilename: /var/www/html/flow-login/Packages/Framework/TYPO3.Eel/Classes/TYPO3/Eel/Helper/I18nHelper.php
 #

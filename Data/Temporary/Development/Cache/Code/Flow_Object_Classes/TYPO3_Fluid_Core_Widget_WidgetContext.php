@@ -264,5 +264,5 @@ class WidgetContext extends WidgetContext_Original implements \TYPO3\Flow\Object
 		}
 			}
 }
-# PathAndFilename: /var/www/html/internship-project-3-team-2/flow_login/Packages/Framework/TYPO3.Fluid/Classes/TYPO3/Fluid/Core/Widget/WidgetContext.php
+# PathAndFilename: /var/www/html/flow-login/Packages/Framework/TYPO3.Fluid/Classes/TYPO3/Fluid/Core/Widget/WidgetContext.php
 #

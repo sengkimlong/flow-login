@@ -34,7 +34,7 @@ jQuery(document).ready(function() {
 
         jQuery.ajax({
             type: "GET",
-            url: "http://local.intern.dev/_Resources/Static/Packages/SKL.Test/Js/form" + selectId + ".json",
+            url: "http://local.project.dev/_Resources/Static/Packages/SKL.Test/Js/form" + selectId + ".json",
             dataType: "text",
             success:function(res) {
                 var data = JSON.parse(res);
@@ -65,7 +65,7 @@ jQuery(document).ready(function() {
 
         jQuery.ajax({
             type: "GET",
-            url: "http://local.intern.dev/_Resources/Static/Packages/SKL.Test/Js/form" + selectId + ".json",
+            url: "http://local.project.dev/_Resources/Static/Packages/SKL.Test/Js/form" + selectId + ".json",
             dataType: "text",
             success: function (res) {
             	var numberOfQuestion=0;
@@ -118,7 +118,7 @@ jQuery(document).ready(function() {
 
         jQuery.ajax({
             type: "GET",
-            url: "http://local.intern.dev/_Resources/Static/Packages/SKL.Test/Js/form" + selectId + ".json",
+            url: "http://local.project.dev/_Resources/Static/Packages/SKL.Test/Js/form" + selectId + ".json",
             dataType: "text",
             success: function (res) {
                 var data = JSON.parse(res);
@@ -145,7 +145,7 @@ jQuery(document).ready(function() {
     var track = 0;
     jQuery.ajax({
         type: "GET",
-        url: "http://local.intern.dev/_Resources/Static/Packages/SKL.Test/Js/homepagecontent.json",
+        url: "http://local.project.dev/_Resources/Static/Packages/SKL.Test/Js/homepagecontent.json",
         dataType: "text",
         success:function(res) {
             var data = JSON.parse(res);

@@ -419,5 +419,5 @@ class User extends User_Original implements \TYPO3\Flow\Object\Proxy\ProxyInterf
 		}
 			}
 }
-# PathAndFilename: /var/www/html/internship-project-3-team-2/flow_login/Packages/Application/SKL.Test/Classes/SKL/Test/Domain/Model/User.php
+# PathAndFilename: /var/www/html/flow-login/Packages/Application/SKL.Test/Classes/SKL/Test/Domain/Model/User.php
 #

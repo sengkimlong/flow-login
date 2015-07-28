@@ -30,6 +30,7 @@ class FormController extends ActionController {
 	 * @return void
 	 */
 	public function showAction(Form $form) {
+		$this->view->assign('forms', $this->formRepository->findAll());
 		$this->view->assign('form', $form);
 	}
 

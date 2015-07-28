@@ -41,10 +41,10 @@ class QuestionController extends ActionController {
 	}
 
     /**
-     * @param Question $question
+     * @param Question $newQuestion
      */
-	public function createAction(Question $question = NULL) {
-        $this->questionRepository->add($question);
+	public function createAction(Question $newQuestion = NULL) {
+        $this->questionRepository->add($newQuestion);
         $this->redirect('index', 'Form');
 	}
 

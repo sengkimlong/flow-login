@@ -185,5 +185,5 @@ class PropertyOperation extends PropertyOperation_Original implements \TYPO3\Flo
 		}
 			}
 }
-# PathAndFilename: /var/www/html/internship-project-3-team-2/flow_login/Packages/Framework/TYPO3.Eel/Classes/TYPO3/Eel/FlowQuery/Operations/Object/PropertyOperation.php
+# PathAndFilename: /var/www/html/flow-login/Packages/Framework/TYPO3.Eel/Classes/TYPO3/Eel/FlowQuery/Operations/Object/PropertyOperation.php
 #

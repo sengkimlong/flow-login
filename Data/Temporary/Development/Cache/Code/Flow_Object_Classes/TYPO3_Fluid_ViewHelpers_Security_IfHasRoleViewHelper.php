@@ -344,5 +344,5 @@ $this->Flow_Injected_Properties = array (
 );
 	}
 }
-# PathAndFilename: /var/www/html/internship-project-3-team-2/flow_login/Packages/Framework/TYPO3.Fluid/Classes/TYPO3/Fluid/ViewHelpers/Security/IfHasRoleViewHelper.php
+# PathAndFilename: /var/www/html/flow-login/Packages/Framework/TYPO3.Fluid/Classes/TYPO3/Fluid/ViewHelpers/Security/IfHasRoleViewHelper.php
 #

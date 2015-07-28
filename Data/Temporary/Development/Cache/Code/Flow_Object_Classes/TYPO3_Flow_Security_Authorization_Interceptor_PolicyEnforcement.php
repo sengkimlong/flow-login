@@ -270,5 +270,5 @@ class PolicyEnforcement extends PolicyEnforcement_Original implements \TYPO3\Flo
 		}
 			}
 }
-# PathAndFilename: /var/www/html/internship-project-3-team-2/flow_login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Security/Authorization/Interceptor/PolicyEnforcement.php
+# PathAndFilename: /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Security/Authorization/Interceptor/PolicyEnforcement.php
 #

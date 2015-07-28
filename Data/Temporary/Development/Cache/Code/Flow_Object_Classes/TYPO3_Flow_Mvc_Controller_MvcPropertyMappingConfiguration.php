@@ -194,5 +194,5 @@ class MvcPropertyMappingConfiguration extends MvcPropertyMappingConfiguration_Or
 		}
 			}
 }
-# PathAndFilename: /var/www/html/internship-project-3-team-2/flow_login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Mvc/Controller/MvcPropertyMappingConfiguration.php
+# PathAndFilename: /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Mvc/Controller/MvcPropertyMappingConfiguration.php
 #
