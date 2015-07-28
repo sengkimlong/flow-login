@@ -1,16 +1,16 @@
 
 jQuery(document).ready(function() {
 
- //    jQuery('.item').on("click",function(){
+    jQuery('.item').on("click",function(){
 
- //        for(var i=1;i<5;i++){
- //            $('#list-'+i).removeClass("active");
- //        }
- //        var id = this.id.split('-');
+        for(var i=1;i<5;i++){
+            $('#list-'+i).removeClass("active");
+        }
+        var id = this.id.split('-');
 
- //        $('#list-'+id[1]).addClass("active");
+        $('#list-'+id[1]).addClass("active");
 
- //    });
+    });
 
  //    jQuery('.list').on("click", function() {
  //        $('#questionList').fadeIn("slow");

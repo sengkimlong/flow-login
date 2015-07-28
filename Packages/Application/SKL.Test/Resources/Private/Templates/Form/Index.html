@@ -23,7 +23,7 @@
 			<p>No forms created yet.</p>
 		</f:else>
 	</f:if> -->
-	<p><f:link.action action="new">Create a new form</f:link.action></p>
+	<!-- <p><f:link.action action="new">Create a new form</f:link.action></p> -->
 
 	<nav class="navbar navbar-default">
 	  <div class="container">
@@ -40,12 +40,12 @@
 	          <ul class="nav navbar-nav navbar-right">
 	              <li id="list-1" class="item active"><a href="http://flow-login.dev/forms">Home</a></li>
 
-								<li id="list-{key.circle}" class="item"><a id="form-{key.circle}" class="list" role="button" >{form}</a></li>
-
+								<!-- <li id="list-{key.circle}" class="item"><a id="form-{key.circle}" class="list" role="button" >{form}</a></li>
+ -->
 								<f:if condition="{forms}">
 									<f:then>
 											<f:for each="{forms}" as="form" iteration="key">
-												<li id="list-{key.circle}" class="item">
+												<li id="list-{key.circle}" class="item active">
 													<f:link.action action="show" arguments="{form: form}" id="form-{key.circle}" class="list">{form.name}</f:link.action>
 												</li>
 											</f:for>
