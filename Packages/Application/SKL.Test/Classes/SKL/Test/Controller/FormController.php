@@ -22,7 +22,10 @@ class FormController extends ActionController {
 	 * @return void
 	 */
 	public function indexAction() {
+		session_start();
+		$this->view->assign('usrname', $_SESSION['usrname']);
 		$this->view->assign('forms', $this->formRepository->findAll());
+
 	}
 
 	/**
@@ -30,6 +33,8 @@ class FormController extends ActionController {
 	 * @return void
 	 */
 	public function showAction(Form $form) {
+		session_start();
+		$this->view->assign('usrname', $_SESSION['usrname']);
 		$this->view->assign('forms', $this->formRepository->findAll());
 		$this->view->assign('form', $form);
 	}
@@ -78,4 +83,12 @@ class FormController extends ActionController {
 		$this->redirect('index');
 	}
 
+	/**
+	 * @return void
+	 */
+	public function logoutAction() {
+		session_start();
+		session_destroy();
+		$this->redirect('index', 'User');
+	}
 }

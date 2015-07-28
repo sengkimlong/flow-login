@@ -14,9 +14,9 @@ html, body {
     background-color: #f5f5f5;
 }
 
-#btn-group {
+/*#btn-group {
     display: none;
-}
+}*/
 .footer {
     position: relative;
     width: 100%;
@@ -27,6 +27,7 @@ html, body {
 .content p{
     margin-top:20px;
 }
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover{

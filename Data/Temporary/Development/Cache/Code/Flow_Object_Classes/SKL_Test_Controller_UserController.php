@@ -79,7 +79,7 @@ class UserController_Original extends ActionController {
 		$_SESSION['usrname'] = $newUser->getName();
 		$this->view->assign('usrname', $_SESSION['usrname']);
 
-	 	$this->redirect('home');
+	 	$this->redirect('index', 'form');
 	//
 	}
 	//
@@ -141,7 +141,7 @@ class UserController_Original extends ActionController {
 		$_SESSION['usrname'] = $loginUser->getName();
 
 		//echo $_SESSION['usrname'];
-		$this->redirect('home', 'user');
+		$this->redirect('index', 'form');
 
 	}
 

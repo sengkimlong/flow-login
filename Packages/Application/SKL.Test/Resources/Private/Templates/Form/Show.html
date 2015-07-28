@@ -5,7 +5,7 @@
 <f:section name="stylesheet"></f:section>
 
 <f:section name="Content">
-  <!-- <f:for each="{form.questions}" as="question">
+  <f:for each="{form.questions}" as="question">
       {question.sentence}
   </f:for>
 	<table>
@@ -20,7 +20,7 @@
             </td>
 		</tr>
 	</table>
-	<f:link.action action="index">Back</f:link.action> -->
+	<f:link.action action="index">Back</f:link.action>
 
 
 
@@ -33,12 +33,12 @@
 	              <span class="icon-bar"></span>
 	              <span class="icon-bar"></span>
 	          </button>
-	          <a href="" class="navbar-brand">Team 2</a>
+	          <a href="http://flow-login.dev/forms" class="navbar-brand">Team 2</a>
 	      </div> <!-- End navbar-header -->
 
 	      <div class="collapse navbar-collapse" id="navigation">
 	          <ul class="nav navbar-nav navbar-right">
-	              <li id="list-1" class="item active"><a href="">Home</a></li>
+	              <li id="list-1" class="item active"><a href="http://flow-login.dev/forms">Home</a></li>
 
 								<f:if condition="{forms}">
 									<f:then>
@@ -73,25 +73,25 @@
 	</div>
 
 	<div class="container">
-	  <div id="questionList" class="row">
-	      <div class="col-md-12 col-sm-12 col-xs-12">
+			  
+		  <div id="questionList" class="row">
+		      <div class="col-md-12 col-sm-12 col-xs-12">
 
-          <f:for each="{form.questions}" as="question" iteration="key">
-            <div class="col-md-6">
-                <div class="list-group">
-                    <div class="list-group-item">
-                      <h4 class="list-group-item-heading">{question.sentence}</h4>
+	          <f:for each="{form.questions}" as="question" iteration="key">
+	            <div class="col-md-6">
+	                <div class="list-group">
+	                    <div class="list-group-item">
+	                      <h4 class="list-group-item-heading">{question.sentence}</h4>
 
-                      <input type="text" id="answer-{key.cycle}  '" class="form-control" name="answer" placeholder="Input answer" required>
+	                      <input type="text" id="answer-{key.cycle}  '" class="form-control" name="answer" placeholder="Input answer" required>
 
-                      <p id="alert-{key.cycle}" style="color: red;visibility: hidden;">*Please input your answer...</p>
-                    </div>
-                </div>
-            </div>
-          </f:for>
-
-        </div>
-	  </div>
+	                      <p id="alert-{key.cycle}" style="color: red;visibility: hidden;">*Please input your answer...</p>
+	                    </div>
+	                </div>
+	            </div>
+	          </f:for>
+	        </div>
+		  </div>
 	  <div id="btn-group" class="text-right">
 	      <button class="btn btn-primary" type="button" name="Submit" data-toggle="modal" data-target="#myModal">Submit</button>
 	      <button class="btn btn-danger" type="button" name="Cancel">Cancel</button>

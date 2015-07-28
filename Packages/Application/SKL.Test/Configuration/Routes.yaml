@@ -3,6 +3,15 @@
   uriPattern: ''
   defaults:
     '@package': 'SKL.Test'
+    '@controller': 'User'
+    '@action': 'index'
+    '@format': 'html'
+
+-
+  name: 'Form'
+  uriPattern: 'forms'
+  defaults:
+    '@package': 'SKL.Test'
     '@controller': 'Form'
     '@action': 'index'
     '@format': 'html'
