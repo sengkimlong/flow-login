@@ -28,14 +28,14 @@ html, body {
     margin-top:20px;
 }
 
-.navbar-default .navbar-nav > .active > a,
+/*.navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover{
 
     background-color:inherit;
     color:red;
 
-}
+}*/
 
 .glyphicon-arrow-up{
   font-size: 50px;
@@ -43,4 +43,15 @@ html, body {
 
 #messageError {
   display: none;
+}
+
+.contain {
+  background-color: #e7e7e7;
+  border-radius: 10px;
+}
+#welcome {
+  margin-bottom: 20px;
+}
+#sidebar {
+  padding-top: 10px;
 }

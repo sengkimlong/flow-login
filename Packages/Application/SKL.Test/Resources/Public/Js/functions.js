@@ -1,16 +1,16 @@
 
 jQuery(document).ready(function() {
 
-    jQuery('.item').on("click",function(){
-
-        for(var i=1;i<5;i++){
-            $('#list-'+i).removeClass("active");
-        }
-        var id = this.id.split('-');
-
-        $('#list-'+id[1]).addClass("active");
-
-    });
+    // jQuery('.item').on("click",function(){
+    //
+    //     for(var i=1;i<5;i++){
+    //         $('#list-'+i).removeClass("active");
+    //     }
+    //     var id = this.id.split('-');
+    //
+    //     $('#list-'+id[1]).addClass("active");
+    //
+    // });
 
  //    jQuery('.list').on("click", function() {
  //        $('#questionList').fadeIn("slow");
@@ -58,57 +58,74 @@ jQuery(document).ready(function() {
 
  //    });
 
- //    $('button[name="Submit"]').on("click", function () {
- //        $('#answerContainer').slideDown("slow");
 
- //        jQuery.ajax({
- //            type: "GET",
- //            url: "http://local.project.dev/_Resources/Static/Packages/SKL.Test/Js/form" + selectId + ".json",
- //            dataType: "text",
- //            success: function (res) {
- //            	var numberOfQuestion=0;
- //            	var fillValidated=0;
- //                var data = JSON.parse(res);
- //                var result = "<h2>Your Answer here: </h2";
- //                for (var q in data) {
- //                	numberOfQuestion+=1;
- //                    if ($('#answer-' + data[q].type + '-' + data[q].id).val() === "") {
- //                        $('#alert-' + data[q].type + '-' +data[q].id).css("visibility","visible");
+    $('button[name="Submit"]').on("click", function (e) {
+
+        $('#answerContainer').slideDown("slow");
+        var answerId = 1;
 
 
- //                    }
- //                    else{
- //                        console.log("Hello");
- //                        $('#alert-' + data[q].type + '-' +data[q].id).css("visibility","hidden");
- //                        result +=
- //                            '<tr>' +
- //                            '<td>' + data[q].label + '</td>' +
- //                            '<td>' + $('#answer-' + data[q].type + '-' + data[q].id).val() + '</td>' +
- //                            '</tr>';
- //                        fillValidated+=1;
- //                    }
 
- //                }
- //                if (fillValidated == numberOfQuestion ) {
- //                    jQuery('#answerContainer').html(result);
- //                    jQuery('#answerContainer').css("visibility","visible");
- //                    jQuery('#scrolldown').click();
- //                    jQuery('#scrollup').css("visibility","visible");
- //                }
- //                else{
- //                	jQuery('#answerContainer').css("visibility","hidden");
- //                    jQuery('#scrollup').click();
- //                    jQuery('#scrollup').css("visibility","hidden");
+        while($('#answer-'+answerId).val() !== undefined) {
+          if ($('#answer-'+answerId).val() === '') {
+            $('#alert-'+answerId).css('visibility','visible');
+            e.preventDefault();
+          }
+          $('#answerHere-'+answerId).text($('#answer-'+answerId).val());
+          answerId++;
+        }
 
- //                }
- //            },
- //            error: function (xhr, ajaxOptions, thrownError) {
- //                alert(thrownError);
- //            }
 
- //        });
 
- //    });
+
+        // jQuery.ajax({
+        //     type: "GET",
+        //     url: "http://local.project.dev/_Resources/Static/Packages/SKL.Test/Js/form" + selectId + ".json",
+        //     dataType: "text",
+        //     success: function (res) {
+        //     	var numberOfQuestion=0;
+        //     	var fillValidated=0;
+        //         var data = JSON.parse(res);
+        //         var result = "<h2>Your Answer here: </h2";
+        //         for (var q in data) {
+        //         	numberOfQuestion+=1;
+        //             if ($('#answer-' + data[q].type + '-' + data[q].id).val() === "") {
+        //                 $('#alert-' + data[q].type + '-' +data[q].id).css("visibility","visible");
+        //
+        //
+        //             }
+        //             else{
+        //                 console.log("Hello");
+        //                 $('#alert-' + data[q].type + '-' +data[q].id).css("visibility","hidden");
+        //                 result +=
+        //                     '<tr>' +
+        //                     '<td>' + data[q].label + '</td>' +
+        //                     '<td>' + $('#answer-' + data[q].type + '-' + data[q].id).val() + '</td>' +
+        //                     '</tr>';
+        //                 fillValidated+=1;
+        //             }
+        //
+        //         }
+        //         if (fillValidated == numberOfQuestion ) {
+        //             jQuery('#answerContainer').html(result);
+        //             jQuery('#answerContainer').css("visibility","visible");
+        //             jQuery('#scrolldown').click();
+        //             jQuery('#scrollup').css("visibility","visible");
+        //         }
+        //         else{
+        //         	jQuery('#answerContainer').css("visibility","hidden");
+        //             jQuery('#scrollup').click();
+        //             jQuery('#scrollup').css("visibility","hidden");
+        //
+        //         }
+        //     },
+        //     error: function (xhr, ajaxOptions, thrownError) {
+        //         alert(thrownError);
+        //     }
+        //
+        // });
+
+    });
 
  //    $('button[name="Cancel"]').on("click", function () {
 
@@ -118,6 +135,8 @@ jQuery(document).ready(function() {
  //            type: "GET",
  //            url: "http://local.project.dev/_Resources/Static/Packages/SKL.Test/Js/form" + selectId + ".json",
  //            dataType: "text",
+ //            success: function (res) {
+ //                var data =t",
  //            success: function (res) {
  //                var data = JSON.parse(res);
  //                var result = "";
@@ -143,7 +162,7 @@ jQuery(document).ready(function() {
     var track = 0;
     jQuery.ajax({
         type: "GET",
-        url: "http://flow-login.dev/_Resources/Static/Packages/SKL.Test/Js/homepagecontent.json",
+        url: "http://local.project.dev/_Resources/Static/Packages/SKL.Test/Js/homepagecontent.json",
         dataType: "text",
         success:function(res) {
             var data = JSON.parse(res);

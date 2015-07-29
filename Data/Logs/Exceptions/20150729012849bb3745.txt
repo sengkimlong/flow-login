@@ -1,0 +1,71 @@
+Uncaught exception in line 836 of /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Connection.php: An exception occurred while executing 'SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.name AS name1, s0_.question AS question2, s0_.user AS user3 FROM skl_test_domain_model_answer s0_ WHERE s0_.user = ?' with params [{}]:
+
+Catchable Fatal Error: Object of class SKL\Test\Domain\Model\User could not be converted to string in /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php line 67
+
+23 Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Doctrine\DBAL\Driver\PDOMySql\Driver, TYPO3\Flow\Error\Exception, "SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.name AS name1, s0_.question AS question2, s0_.user AS user3 FROM skl_test_domain_model_answer s0_ WHERE s0_.user = ?", array|1|)
+22 Doctrine\DBAL\Connection::executeQuery("SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.name AS name1, s0_.question AS question2, s0_.user AS user3 FROM skl_test_domain_model_answer s0_ WHERE s0_.user = ?", array|1|, array|1|, NULL)
+21 Doctrine\ORM\Query\Exec\SingleSelectExecutor::execute(Doctrine\DBAL\Connection, array|1|, array|1|)
+20 Doctrine\ORM\Query::_doExecute()
+19 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+18 Doctrine\ORM\AbstractQuery::getResult()
+17 TYPO3\Flow\Persistence\Doctrine\Query_Original::getResult()
+16 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+15 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::toArray()
+14 SKL\Test\Controller\FormController_Original::profileAction()
+13 call_user_func_array(array|2|, array|0|)
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+Previous exception: Uncaught exception #1: Catchable Fatal Error: Object of class SKL\Test\Domain\Model\User could not be converted to string in /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php line 67
+
+26 TYPO3\Flow\Error\ErrorHandler::handleError(4096, "Object of class SKL\Test\Domain\Model\User could not be converted to string", "/var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php", 67, array|3|)
+25 PDOStatement::bindValue(1, "Object", 2)
+24 Doctrine\DBAL\Driver\PDOStatement::bindValue(1, SKL\Test\Domain\Model\User, 2)
+23 Doctrine\DBAL\Connection::_bindTypedValues(Doctrine\DBAL\Driver\PDOStatement, array|1|, array|1|)
+22 Doctrine\DBAL\Connection::executeQuery("SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.name AS name1, s0_.question AS question2, s0_.user AS user3 FROM skl_test_domain_model_answer s0_ WHERE s0_.user = ?", array|1|, array|1|, NULL)
+21 Doctrine\ORM\Query\Exec\SingleSelectExecutor::execute(Doctrine\DBAL\Connection, array|1|, array|1|)
+20 Doctrine\ORM\Query::_doExecute()
+19 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+18 Doctrine\ORM\AbstractQuery::getResult()
+17 TYPO3\Flow\Persistence\Doctrine\Query_Original::getResult()
+16 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+15 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::toArray()
+14 SKL\Test\Controller\FormController_Original::profileAction()
+13 call_user_func_array(array|2|, array|0|)
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /skl.test/form/profile HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Referer: http://local.project.dev/forms
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+
+
+
+HTTP RESPONSE:
+[response was empty]

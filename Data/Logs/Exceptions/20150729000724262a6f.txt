@@ -1,0 +1,38 @@
+Uncaught exception #1355480641 in line 257 of /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Core/Booting/Scripts.php: Execution of subprocess failed with exit code 255 without any further output. (Please check your PHP error log for possible Fatal errors)
+
+17 TYPO3\Flow\Core\Booting\Scripts::executeCommand("typo3.flow:core:compile", array|15|)
+16 TYPO3\Flow\Core\Booting\Scripts::initializeProxyClasses(TYPO3\Flow\Core\Bootstrap)
+15 TYPO3\Flow\Core\Booting\Scripts::recompileClasses(TYPO3\Flow\Core\Bootstrap)
+14 call_user_func(array|2|, TYPO3\Flow\Core\Bootstrap)
+13 TYPO3\Flow\Core\Booting\Step::__invoke(TYPO3\Flow\Core\Bootstrap)
+12 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+11 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+10 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+9 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+8 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+7 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+6 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+5 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+4 TYPO3\Flow\Core\Booting\Sequence::invoke(TYPO3\Flow\Core\Bootstrap)
+3 TYPO3\Flow\Http\RequestHandler::boot()
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /skl.test/user/success HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Content-Length: 461
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: http://local.project.dev
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Referer: http://local.project.dev/skl.test/user/login
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+__referrer%5B%40package%5D=SKL.Test&__referrer%5B%40subpackage%5D=&__referrer%5B%40controller%5D=User&__referrer%5B%40action%5D=login&__referrer%5Barguments%5D=YTowOnt9d60fcd1c77e9b934ed58dcf6a1145cc55d9efbcb&__trustedProperties=a%3A2%3A%7Bs%3A9%3A%22loginUser%22%3Ba%3A2%3A%7Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A8%3A%22password%22%3Bi%3A1%3B%7Di%3A0%3Bi%3A1%3B%7Db97cc9967257e201bd05955c3dd6e67241dfd087&loginUser%5Bname%5D=sengkimlong&loginUser%5Bpassword%5D=skl
+
+HTTP RESPONSE:
+[response was empty]

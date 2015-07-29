@@ -27,3 +27,15 @@
     form:
       objectType: 'SKL\Test\Domain\Model\Form'
       uriPattern: '{name}'
+
+-
+  name: 'Form'
+  uriPattern: 'profiles/{form}'
+  defaults:
+    '@package':     'SKL.Test'
+    '@controller':  'Form'
+    '@action':      'profile'
+  routeParts:
+    form:
+      objectType: 'SKL\Test\Domain\Model\Form'
+      uriPattern: '{name}'

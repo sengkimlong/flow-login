@@ -19,6 +19,18 @@ class FormController extends ActionController {
 	protected $formRepository;
 
 	/**
+	 * @Flow\Inject
+	 * @var \SKL\Test\Domain\Repository\UserRepository
+	 */
+	protected $userRepository;
+
+	/**
+	 * @Flow\Inject
+	 * @var \SKL\Test\Domain\Repository\AnswerRepository
+	 */
+	protected $answerRepository;
+
+	/**
 	 * @return void
 	 */
 	public function indexAction() {
@@ -91,4 +103,19 @@ class FormController extends ActionController {
 		session_destroy();
 		$this->redirect('index', 'User');
 	}
+
+	/**
+	 * @return void
+	 */
+	public function profileAction() {
+		session_start();
+	// \TYPO3\Flow\var_dump($this->answerRepository->findByUser('wefwe'));
+	// 	die();
+
+		$this->view->assign('usrname', $_SESSION['usrname']);
+		$this->view->assign('forms', $this->formRepository->findAll());
+
+		// $this->view->assign('form', $form);
+	}
+
 }

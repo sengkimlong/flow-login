@@ -25,11 +25,19 @@ class Question {
 	 */
 	protected $sentence;
 
-    /**
-     * @var \SKL\Test\Domain\Model\Form
-     * @ORM\ManyToOne(inversedBy="questions")
-     */
-    protected $form;
+  /**
+   * @var \SKL\Test\Domain\Model\Form
+   * @ORM\ManyToOne(inversedBy="questions")
+   */
+  protected $form;
+
+  /**
+   * @var \Doctrine\Common\Collections\Collection<\SKL\Test\Domain\Model\Answer>
+   * @ORM\OneToMany(mappedBy="question")
+   */
+  protected $answers;
+
+
 
     /**
      * @return int
@@ -58,6 +66,20 @@ class Question {
      */
     public function setForm(\SKL\Test\Domain\Model\Form $form) {
         $this->form = $form;
+    }
+
+    /**
+     * return \SKL\Test\Domain\Model\Form
+     */
+    public function getForm() {
+        return $this->form;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnswers() {
+        return $this->answers;
     }
 
 }

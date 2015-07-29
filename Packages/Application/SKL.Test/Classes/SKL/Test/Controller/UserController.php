@@ -19,6 +19,12 @@ class UserController extends ActionController {
 	protected $userRepository;
 
 	/**
+	 * @Flow\Inject
+	 * @var \SKL\Test\Domain\Repository\FormRepository
+	 */
+	protected $formRepository;
+
+	/**
 	 * @return void
 	 */
 	public function indexAction() {
@@ -77,9 +83,11 @@ class UserController extends ActionController {
 		$this->userRepository->add($newUser);
 		session_start();
 		$_SESSION['usrname'] = $newUser->getName();
+		$_SESSION['identity'] = $this->userRepository->findUserIdentity($newUser);
 		$this->view->assign('usrname', $_SESSION['usrname']);
+		$this->redirect('index', 'form');
 
-	 	$this->redirect('index', 'form');
+		// 	$this->redirect('index', 'form');
 	//
 	}
 	//
@@ -134,12 +142,14 @@ class UserController extends ActionController {
 			}
 		}
 		if ($test == false) {
-			$this->addFlashMessage("Sorry name and password you enter is valid!");
+			$this->addFlashMessage("Sorry name and password you enter is invalid!");
 			$this->redirect('login');
 		}
 
 		$_SESSION['usrname'] = $loginUser->getName();
-
+		// \TYPO3\Flow\var_dump($this->userRepository->findUserIdentity($loginUser));
+		// die();
+		$_SESSION['identity'] = $this->userRepository->findUserIdentity($loginUser);
 		//echo $_SESSION['usrname'];
 		$this->redirect('index', 'form');
 
@@ -158,6 +168,7 @@ class UserController extends ActionController {
 	public function homeAction() {
 		session_start();
 		$this->view->assign('usrname', $_SESSION['usrname']);
+		$this->view->assign('forms', $this->formRepository->findAll());
 	}
 
 	/**
@@ -168,16 +179,6 @@ class UserController extends ActionController {
 		session_destroy();
 		$this->redirect('index');
 	}
-
-	/**
-	 * @return void
-	 */
-	public function testAction() {
-		$this->view->assign('foos', array(
-			'bar', 'baz'
-		));
-	}
-
 
 	// /**
 	//  * @param \SKL\Test\Domain\Model\User $loginUser

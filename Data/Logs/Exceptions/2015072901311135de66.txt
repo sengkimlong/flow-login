@@ -1,0 +1,72 @@
+Uncaught exception in line 483 of /var/www/html/flow-login/Packages/Libraries/doctrine/orm/lib/Doctrine/ORM/Query/Parser.php: [Semantical Error] line 0, col 67 near 'user)': Error: Invalid PathExpression. Must be a CollectionValuedAssociationField.
+
+26 Doctrine\ORM\Query\QueryException::semanticalError("line 0, col 67 near 'user)': Error: Invalid PathExpression. Must be a CollectionValuedAssociationField.", Doctrine\ORM\Query\QueryException)
+25 Doctrine\ORM\Query\Parser::semanticalError("Invalid PathExpression. Must be a CollectionValuedAssociationField.", array|3|)
+24 Doctrine\ORM\Query\Parser::processDeferredPathExpressions(Doctrine\ORM\Query\AST\SelectStatement)
+23 Doctrine\ORM\Query\Parser::getAST()
+22 Doctrine\ORM\Query\Parser::parse()
+21 Doctrine\ORM\Query::_parse()
+20 Doctrine\ORM\Query::_doExecute()
+19 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+18 Doctrine\ORM\AbstractQuery::getResult()
+17 TYPO3\Flow\Persistence\Doctrine\Query_Original::getResult()
+16 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+15 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::toArray()
+14 SKL\Test\Controller\FormController_Original::profileAction()
+13 call_user_func_array(array|2|, array|0|)
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+Previous exception: Uncaught exception in line 483 of /var/www/html/flow-login/Packages/Libraries/doctrine/orm/lib/Doctrine/ORM/Query/Parser.php: SELECT e FROM SKL\Test\Domain\Model\Answer e WHERE (?1 MEMBER OF e.user)
+
+26 Doctrine\ORM\Query\QueryException::dqlError("SELECT e FROM SKL\Test\Domain\Model\Answer e WHERE (?1 MEMBER OF e.user)")
+25 Doctrine\ORM\Query\Parser::semanticalError("Invalid PathExpression. Must be a CollectionValuedAssociationField.", array|3|)
+24 Doctrine\ORM\Query\Parser::processDeferredPathExpressions(Doctrine\ORM\Query\AST\SelectStatement)
+23 Doctrine\ORM\Query\Parser::getAST()
+22 Doctrine\ORM\Query\Parser::parse()
+21 Doctrine\ORM\Query::_parse()
+20 Doctrine\ORM\Query::_doExecute()
+19 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+18 Doctrine\ORM\AbstractQuery::getResult()
+17 TYPO3\Flow\Persistence\Doctrine\Query_Original::getResult()
+16 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+15 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::toArray()
+14 SKL\Test\Controller\FormController_Original::profileAction()
+13 call_user_func_array(array|2|, array|0|)
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /skl.test/form/profile HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Referer: http://local.project.dev/forms
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+
+
+
+HTTP RESPONSE:
+[response was empty]

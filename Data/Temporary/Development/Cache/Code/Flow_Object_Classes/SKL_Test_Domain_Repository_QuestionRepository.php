@@ -26,7 +26,18 @@ class QuestionRepository_Original extends Repository {
 //
 //    }
 
-}namespace SKL\Test\Domain\Repository;
+  /**
+   * @param string $identity
+   * @return array
+   */
+   public function findQuestionByIdentity ($identity) {
+     $query = $this->createQuery();
+     $query->matching($query->equals('persistence_object_identifier',$identity));
+     return $query->execute()->toArray();
+   }
+
+}
+namespace SKL\Test\Domain\Repository;
 
 use Doctrine\ORM\Mapping as ORM;
 use TYPO3\Flow\Annotations as Flow;

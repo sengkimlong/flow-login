@@ -1,0 +1,32 @@
+Uncaught exception #1 in line 102 of /var/www/html/flow-login/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/SKL_Test_Controller_FormController.php: Notice: Undefined variable: form in /var/www/html/flow-login/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/SKL_Test_Controller_FormController.php line 102
+
+15 TYPO3\Flow\Error\ErrorHandler::handleError(8, "Undefined variable: form", "/var/www/html/flow-login/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/SKL_Test_Controller_FormController.php", 102, array|0|)
+14 SKL\Test\Controller\FormController_Original::profileAction()
+13 call_user_func_array(array|2|, array|0|)
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /skl.test/form/profile HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Referer: http://local.project.dev/forms
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+
+
+
+HTTP RESPONSE:
+[response was empty]

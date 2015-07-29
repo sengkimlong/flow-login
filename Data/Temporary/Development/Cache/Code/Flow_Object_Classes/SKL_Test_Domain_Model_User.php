@@ -39,6 +39,12 @@ class User_Original {
 	 */
 	protected $email;
 
+	/**
+   * @var \Doctrine\Common\Collections\Collection<\SKL\Test\Domain\Model\Answer>
+   * @ORM\OneToMany(mappedBy="user")
+   */
+  protected $uanswers;
+
 	// /**
 	//  * @return int
 	//  */

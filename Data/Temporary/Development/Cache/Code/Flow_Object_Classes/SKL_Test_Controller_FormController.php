@@ -19,6 +19,18 @@ class FormController_Original extends ActionController {
 	protected $formRepository;
 
 	/**
+	 * @Flow\Inject
+	 * @var \SKL\Test\Domain\Repository\UserRepository
+	 */
+	protected $userRepository;
+
+	/**
+	 * @Flow\Inject
+	 * @var \SKL\Test\Domain\Repository\AnswerRepository
+	 */
+	protected $answerRepository;
+
+	/**
 	 * @return void
 	 */
 	public function indexAction() {
@@ -91,6 +103,21 @@ class FormController_Original extends ActionController {
 		session_destroy();
 		$this->redirect('index', 'User');
 	}
+
+	/**
+	 * @return void
+	 */
+	public function profileAction() {
+		session_start();
+	// \TYPO3\Flow\var_dump($this->answerRepository->findByUser('wefwe'));
+	// 	die();
+
+		$this->view->assign('usrname', $_SESSION['usrname']);
+		$this->view->assign('forms', $this->formRepository->findAll());
+
+		// $this->view->assign('form', $form);
+	}
+
 }
 namespace SKL\Test\Controller;
 
@@ -238,6 +265,22 @@ class FormController extends FormController_Original implements \TYPO3\Flow\Obje
 				$this->formRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->createLazyDependency('f0e3546189922572c155ef6f30a7fd33',  $formRepository_reference, 'SKL\Test\Domain\Repository\FormRepository', function() { return \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->get('SKL\Test\Domain\Repository\FormRepository'); });
 			}
 		}
+		$userRepository_reference = &$this->userRepository;
+		$this->userRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('SKL\Test\Domain\Repository\UserRepository');
+		if ($this->userRepository === NULL) {
+			$this->userRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getLazyDependencyByHash('938a82b4896919dbb342e58635403dc5', $userRepository_reference);
+			if ($this->userRepository === NULL) {
+				$this->userRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->createLazyDependency('938a82b4896919dbb342e58635403dc5',  $userRepository_reference, 'SKL\Test\Domain\Repository\UserRepository', function() { return \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->get('SKL\Test\Domain\Repository\UserRepository'); });
+			}
+		}
+		$answerRepository_reference = &$this->answerRepository;
+		$this->answerRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('SKL\Test\Domain\Repository\AnswerRepository');
+		if ($this->answerRepository === NULL) {
+			$this->answerRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getLazyDependencyByHash('6b2d91f8e989c423d71876c65e62cd36', $answerRepository_reference);
+			if ($this->answerRepository === NULL) {
+				$this->answerRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->createLazyDependency('6b2d91f8e989c423d71876c65e62cd36',  $answerRepository_reference, 'SKL\Test\Domain\Repository\AnswerRepository', function() { return \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->get('SKL\Test\Domain\Repository\AnswerRepository'); });
+			}
+		}
 		$objectManager_reference = &$this->objectManager;
 		$this->objectManager = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('TYPO3\Flow\Object\ObjectManagerInterface');
 		if ($this->objectManager === NULL) {
@@ -305,14 +348,16 @@ class FormController extends FormController_Original implements \TYPO3\Flow\Obje
 $this->Flow_Injected_Properties = array (
   0 => 'settings',
   1 => 'formRepository',
-  2 => 'objectManager',
-  3 => 'reflectionService',
-  4 => 'mvcPropertyMappingConfigurationService',
-  5 => 'viewConfigurationManager',
-  6 => 'systemLogger',
-  7 => 'validatorResolver',
-  8 => 'flashMessageContainer',
-  9 => 'persistenceManager',
+  2 => 'userRepository',
+  3 => 'answerRepository',
+  4 => 'objectManager',
+  5 => 'reflectionService',
+  6 => 'mvcPropertyMappingConfigurationService',
+  7 => 'viewConfigurationManager',
+  8 => 'systemLogger',
+  9 => 'validatorResolver',
+  10 => 'flashMessageContainer',
+  11 => 'persistenceManager',
 );
 	}
 }

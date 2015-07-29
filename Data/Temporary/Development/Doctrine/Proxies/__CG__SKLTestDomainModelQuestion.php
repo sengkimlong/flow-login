@@ -255,4 +255,26 @@ class Question extends \SKL\Test\Domain\Model\Question implements \Doctrine\ORM\
         return parent::setForm($form);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getForm()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getForm', array());
+
+        return parent::getForm();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAnswers()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAnswers', array());
+
+        return parent::getAnswers();
+    }
+
 }

@@ -26,4 +26,14 @@ class QuestionRepository extends Repository {
 //
 //    }
 
+  /**
+   * @param string $identity
+   * @return array
+   */
+   public function findQuestionByIdentity ($identity) {
+     $query = $this->createQuery();
+     $query->matching($query->equals('persistence_object_identifier',$identity));
+     return $query->execute()->toArray();
+   }
+
 }

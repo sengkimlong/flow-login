@@ -1,0 +1,105 @@
+Uncaught exception in line 116 of /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php: An exception occurred while executing 'INSERT INTO skl_test_domain_model_user (persistence_object_identifier, name, password, confirmpassword, email) VALUES (?, ?, ?, ?, ?)' with params ["25d6b6f1-39f7-3205-ad62-ee2ccd79e2ce", "sengkimlong", "skl", "skl", "sengkimlong8@gmail.com"]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '25d6b6f1-39f7-3205-ad62-ee2ccd79e2ce' for key 'PRIMARY'
+
+25 Doctrine\DBAL\Driver\AbstractMySQLDriver::convertException("An exception occurred while executing 'INSERT INTO skl_test_domain_model_user (persistence_object_identifier, name, password, confirmpassword, email) VALUES (?, ?, ?, ?, ?)' with params ["25d6b6f1-39f7-3205-ad62-ee2ccd79e2ce", "sengkimlong", "skl", "skl", "sengkimlong8@gmail.com"]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '25d6b6f1-39f7-3205-ad62-ee2ccd79e2ce' for key 'PRIMARY'", Doctrine\DBAL\Driver\PDOException)
+24 Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Doctrine\DBAL\Driver\PDOMySql\Driver, Doctrine\DBAL\Driver\PDOException, "INSERT INTO skl_test_domain_model_user (persistence_object_identifier, name, password, confirmpassword, email) VALUES (?, ?, ?, ?, ?)", array|5|)
+23 Doctrine\DBAL\Statement::execute()
+22 Doctrine\ORM\Persisters\BasicEntityPersister::executeInserts()
+21 Doctrine\ORM\UnitOfWork::executeInserts(TYPO3\Flow\Persistence\Doctrine\Mapping\ClassMetadata)
+20 Doctrine\ORM\UnitOfWork::commit(NULL)
+19 Doctrine\ORM\EntityManager::flush()
+18 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::persistAll()
+17 TYPO3\Flow\Package::TYPO3\Flow\{closure}(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Test\Controller\AnswerController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+16 Closure::__invoke(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Test\Controller\AnswerController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+15 call_user_func_array(array|2|, array|4|)
+14 TYPO3\Flow\SignalSlot\Dispatcher::dispatch("TYPO3\Flow\Mvc\Dispatcher", "afterControllerInvocation", array|3|)
+13 TYPO3\Flow\SignalSlot\SignalAspect_Original::forwardSignalToDispatcher(TYPO3\Flow\Aop\JoinPoint)
+12 TYPO3\Flow\Aop\Advice\AbstractAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+11 TYPO3\Flow\Mvc\Dispatcher::emitAfterControllerInvocation(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Test\Controller\AnswerController)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+Previous exception: Uncaught exception #23000 in line 165 of /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Statement.php: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '25d6b6f1-39f7-3205-ad62-ee2ccd79e2ce' for key 'PRIMARY'
+
+24 Doctrine\DBAL\Driver\PDOStatement::execute(NULL)
+23 Doctrine\DBAL\Statement::execute()
+22 Doctrine\ORM\Persisters\BasicEntityPersister::executeInserts()
+21 Doctrine\ORM\UnitOfWork::executeInserts(TYPO3\Flow\Persistence\Doctrine\Mapping\ClassMetadata)
+20 Doctrine\ORM\UnitOfWork::commit(NULL)
+19 Doctrine\ORM\EntityManager::flush()
+18 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::persistAll()
+17 TYPO3\Flow\Package::TYPO3\Flow\{closure}(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Test\Controller\AnswerController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+16 Closure::__invoke(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Test\Controller\AnswerController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+15 call_user_func_array(array|2|, array|4|)
+14 TYPO3\Flow\SignalSlot\Dispatcher::dispatch("TYPO3\Flow\Mvc\Dispatcher", "afterControllerInvocation", array|3|)
+13 TYPO3\Flow\SignalSlot\SignalAspect_Original::forwardSignalToDispatcher(TYPO3\Flow\Aop\JoinPoint)
+12 TYPO3\Flow\Aop\Advice\AbstractAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+11 TYPO3\Flow\Mvc\Dispatcher::emitAfterControllerInvocation(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Test\Controller\AnswerController)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+Previous exception: Uncaught exception #23000 in line 91 of /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '25d6b6f1-39f7-3205-ad62-ee2ccd79e2ce' for key 'PRIMARY'
+
+25 PDOStatement::execute(NULL)
+24 Doctrine\DBAL\Driver\PDOStatement::execute(NULL)
+23 Doctrine\DBAL\Statement::execute()
+22 Doctrine\ORM\Persisters\BasicEntityPersister::executeInserts()
+21 Doctrine\ORM\UnitOfWork::executeInserts(TYPO3\Flow\Persistence\Doctrine\Mapping\ClassMetadata)
+20 Doctrine\ORM\UnitOfWork::commit(NULL)
+19 Doctrine\ORM\EntityManager::flush()
+18 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::persistAll()
+17 TYPO3\Flow\Package::TYPO3\Flow\{closure}(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Test\Controller\AnswerController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+16 Closure::__invoke(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Test\Controller\AnswerController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+15 call_user_func_array(array|2|, array|4|)
+14 TYPO3\Flow\SignalSlot\Dispatcher::dispatch("TYPO3\Flow\Mvc\Dispatcher", "afterControllerInvocation", array|3|)
+13 TYPO3\Flow\SignalSlot\SignalAspect_Original::forwardSignalToDispatcher(TYPO3\Flow\Aop\JoinPoint)
+12 TYPO3\Flow\Aop\Advice\AbstractAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+11 TYPO3\Flow\Mvc\Dispatcher::emitAfterControllerInvocation(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Test\Controller\AnswerController)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /skl.test/answer/create HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Content-Length: 625
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: http://local.project.dev
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Referer: http://local.project.dev/forms/form2
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+__referrer%5B%40package%5D=SKL.Test&__referrer%5B%40subpackage%5D=&__referrer%5B%40controller%5D=Form&__referrer%5B%40action%5D=show&__referrer%5Barguments%5D=YToxOntzOjQ6ImZvcm0iO2E6MTp7czoxMDoiX19pZGVudGl0eSI7czozNjoiMGVjYTU1ODMtMjZjZi02MjI5LTlhZmEtMDEwYzUxNWJiODRmIjt9fQ%3D%3D16387d6cc493c0a807531ce536a30c79777bffe3&__trustedProperties=a%3A2%3A%7Bs%3A3%3A%22obj%22%3Ba%3A1%3A%7Bs%3A10%3A%22question-1%22%3Ba%3A1%3A%7Bs%3A10%3A%22__identity%22%3Bi%3A1%3B%7D%7Di%3A0%3Bi%3A1%3B%7Dc329e7f3f5d30e2104b9f16da7011c985061d9fd&obj%5Bquestion-1%5D%5B__identity%5D=8a1beea3-9359-7870-4803-b8534d4719d8&obj%5Bquestion-1%5D%5B%5D=wef
+
+HTTP RESPONSE:
+<html><head><meta http-equiv="refresh" content="0;url=http://local.project.dev/forms"/></head></html>

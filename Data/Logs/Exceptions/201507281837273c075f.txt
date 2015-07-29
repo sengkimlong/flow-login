@@ -1,0 +1,186 @@
+Uncaught exception #1237823695 in line 601 of /var/www/html/flow-login/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Fluid_Core_Parser_TemplateParser.php: Argument "objectName" was not registered.
+
+18 TYPO3\Fluid\Core\Parser\TemplateParser_Original::abortIfUnregisteredArgumentsExist(array|23|, array|3|)
+17 TYPO3\Fluid\Core\Parser\TemplateParser_Original::initializeViewHelperAndAddItToStack(TYPO3\Fluid\Core\Parser\ParsingState, "f", "form.textfield", array|3|)
+16 TYPO3\Fluid\Core\Parser\TemplateParser_Original::openingViewHelperTagHandler(TYPO3\Fluid\Core\Parser\ParsingState, "f", "form.textfield", " class="form-control" name="answer[]" objectName="newAnswer" ", TRUE)
+15 TYPO3\Fluid\Core\Parser\TemplateParser_Original::buildObjectTree(array|68|, 2)
+14 TYPO3\Fluid\Core\Parser\TemplateParser_Original::parse("<f:layout name="Default" />
+
+<f:section name="Title"></f:section>
+
+<f:section name="stylesheet"></f:section>
+
+<f:section name="Content">
+  <!-- <f:for each="{form.questions}" as="question">
+      {question.sentence}
+  </f:for>
+	<table>
+		<tr>
+			<th>Name</th>
+			<td>{form.name}
+            <f:form action="create" controller="question" objectName="newQuestion">
+                <f:form.textfield property="sentence" />
+                <f:form.hidden property="form" value="{form}" />
+                <f:form.submit value="Submit" />
+            </f:form>
+            </td>
+		</tr>
+	</table>
+	<f:link.action action="index">Back</f:link.action> -->
+
+
+
+
+  <nav class="navbar navbar-default">
+	  <div class="container">
+	      <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	          </button>
+	          <a href="http://flow-login.dev/forms" class="navbar-brand">Team 2</a>
+	      </div> <!-- End navbar-header -->
+
+	      <div class="collapse navbar-collapse" id="navigation">
+	          <ul class="nav navbar-nav navbar-right">
+	              <li id="list-1" class="item active"><a href="http://flow-login.dev/forms">Home</a></li>
+
+								<f:if condition="{forms}">
+									<f:then>
+											<f:for each="{forms}" as="format" iteration="key">
+												<li id="list-{key.cycle}" class="item">
+													<f:link.action action="show" arguments="{form: format}" id="form-{key.cycle}" class="list">{format.name}</f:link.action>
+												</li>
+											</f:for>
+									</f:then>
+									<f:else>
+										<p>No forms created yet.</p>
+									</f:else>
+								</f:if>
+
+
+	              <li id="list-5" class="dropdown item">
+	                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{usrname} <span class="caret"></span></a>
+	                  <ul class="dropdown-menu">
+	                    <li ><f:link.action action="logout">Logout</f:link.action></li>
+	                  </ul>
+	              </li>
+	          </ul>
+	      </div>
+
+	  </div> <!-- End container-fluid -->
+	</nav>
+
+	<div class="container">
+	  <div class="row">
+	      <h3 id="listTitle" class="text-center" style="margin-bottom: 20px;margin-top: 0px;"></h3>
+	  </div>
+	</div>
+
+	<div class="container">
+
+		  <div id="questionList" class="row">
+
+		      <div class="col-md-12 col-sm-12 col-xs-12">
+
+            <f:form action="create" controller="Answer">
+
+  	          <f:for each="{form.questions}" as="question" iteration="key">
+  	            <div class="col-md-6">
+  	                <div class="list-group">
+  	                    <div class="list-group-item">
+  	                      <h4 class="list-group-item-heading">{question.sentence}</h4>
+
+                          <f:form.hidden name="obj[question-{key.cycle}]" value="{question}" />
+
+                          <!-- <input type="hidden" id="question-{key.cycle}" class="form-control" name="obj[question][]" value="{question.id}"> -->
+                          <f:form.textfield class="form-control" name="answer[]" objectName="newAnswer" />
+
+
+                          <!-- <input type="text" id="answer-{key.cycle}" class="form-control" name="obj[answer][]" placeholder="Input answer" required> -->
+
+  	                      <!-- <input type="text" id="answer-{key.cycle}  '" class="form-control" name="answer" placeholder="Input answer" required> -->
+
+  	                      <!-- <p id="alert-{key.cycle}" style="color: red;visibility: hidden;">*Please input your answer...</p> -->
+  	                    </div>
+  	                </div>
+  	            </div>
+  	          </f:for>
+              <f:form.submit value="Submit" />
+            </f:form>
+	        </div>
+		  </div>
+	  <div id="btn-group" class="text-right">
+	      <button class="btn btn-primary" type="button" name="Submit" data-toggle="modal" data-target="#myModal">Submit</button>
+	      <button class="btn btn-danger" type="button" name="Cancel">Cancel</button>
+	  </div>
+	</div>
+
+	<div class="container">
+	  <div class="row">
+
+	    <!-- Modal -->
+	    <div id="myModal" class="modal fade" role="dialog">
+	    <div class="modal-dialog">
+
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <!-- <div class="modal-header">
+	          <h3>Your Answer here: </h3>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div> -->
+	        <div class="modal-body" id="answerbody">
+	            <button type="button" class="close" data-dismiss="modal">&times;</button>
+	            <table id="answerContainer" class="table" style="display: none" border="0">
+	                <tr>
+	                    <th>Label:</th>
+	                    <th>Answer:</th>
+	                </tr>
+	            </table>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+
+	    </div>
+
+	  </div>
+
+	</div>
+
+	</div>
+
+
+</f:section>
+")
+13 TYPO3\Fluid\View\AbstractTemplateView::render()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /forms/form1 HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Referer: http://local.project.dev/forms
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+
+
+
+HTTP RESPONSE:
+[response was empty]

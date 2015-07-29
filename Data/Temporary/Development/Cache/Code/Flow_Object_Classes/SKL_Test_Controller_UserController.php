@@ -19,6 +19,12 @@ class UserController_Original extends ActionController {
 	protected $userRepository;
 
 	/**
+	 * @Flow\Inject
+	 * @var \SKL\Test\Domain\Repository\FormRepository
+	 */
+	protected $formRepository;
+
+	/**
 	 * @return void
 	 */
 	public function indexAction() {
@@ -77,9 +83,11 @@ class UserController_Original extends ActionController {
 		$this->userRepository->add($newUser);
 		session_start();
 		$_SESSION['usrname'] = $newUser->getName();
+		$_SESSION['identity'] = $this->userRepository->findUserIdentity($newUser);
 		$this->view->assign('usrname', $_SESSION['usrname']);
+		$this->redirect('index', 'form');
 
-	 	$this->redirect('index', 'form');
+		// 	$this->redirect('index', 'form');
 	//
 	}
 	//
@@ -134,12 +142,14 @@ class UserController_Original extends ActionController {
 			}
 		}
 		if ($test == false) {
-			$this->addFlashMessage("Sorry name and password you enter is valid!");
+			$this->addFlashMessage("Sorry name and password you enter is invalid!");
 			$this->redirect('login');
 		}
 
 		$_SESSION['usrname'] = $loginUser->getName();
-
+		// \TYPO3\Flow\var_dump($this->userRepository->findUserIdentity($loginUser));
+		// die();
+		$_SESSION['identity'] = $this->userRepository->findUserIdentity($loginUser);
 		//echo $_SESSION['usrname'];
 		$this->redirect('index', 'form');
 
@@ -158,6 +168,7 @@ class UserController_Original extends ActionController {
 	public function homeAction() {
 		session_start();
 		$this->view->assign('usrname', $_SESSION['usrname']);
+		$this->view->assign('forms', $this->formRepository->findAll());
 	}
 
 	/**
@@ -168,16 +179,6 @@ class UserController_Original extends ActionController {
 		session_destroy();
 		$this->redirect('index');
 	}
-
-	/**
-	 * @return void
-	 */
-	public function testAction() {
-		$this->view->assign('foos', array(
-			'bar', 'baz'
-		));
-	}
-
 
 	// /**
 	//  * @param \SKL\Test\Domain\Model\User $loginUser
@@ -337,6 +338,14 @@ class UserController extends UserController_Original implements \TYPO3\Flow\Obje
 				$this->userRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->createLazyDependency('938a82b4896919dbb342e58635403dc5',  $userRepository_reference, 'SKL\Test\Domain\Repository\UserRepository', function() { return \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->get('SKL\Test\Domain\Repository\UserRepository'); });
 			}
 		}
+		$formRepository_reference = &$this->formRepository;
+		$this->formRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('SKL\Test\Domain\Repository\FormRepository');
+		if ($this->formRepository === NULL) {
+			$this->formRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getLazyDependencyByHash('f0e3546189922572c155ef6f30a7fd33', $formRepository_reference);
+			if ($this->formRepository === NULL) {
+				$this->formRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->createLazyDependency('f0e3546189922572c155ef6f30a7fd33',  $formRepository_reference, 'SKL\Test\Domain\Repository\FormRepository', function() { return \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->get('SKL\Test\Domain\Repository\FormRepository'); });
+			}
+		}
 		$objectManager_reference = &$this->objectManager;
 		$this->objectManager = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('TYPO3\Flow\Object\ObjectManagerInterface');
 		if ($this->objectManager === NULL) {
@@ -404,14 +413,15 @@ class UserController extends UserController_Original implements \TYPO3\Flow\Obje
 $this->Flow_Injected_Properties = array (
   0 => 'settings',
   1 => 'userRepository',
-  2 => 'objectManager',
-  3 => 'reflectionService',
-  4 => 'mvcPropertyMappingConfigurationService',
-  5 => 'viewConfigurationManager',
-  6 => 'systemLogger',
-  7 => 'validatorResolver',
-  8 => 'flashMessageContainer',
-  9 => 'persistenceManager',
+  2 => 'formRepository',
+  3 => 'objectManager',
+  4 => 'reflectionService',
+  5 => 'mvcPropertyMappingConfigurationService',
+  6 => 'viewConfigurationManager',
+  7 => 'systemLogger',
+  8 => 'validatorResolver',
+  9 => 'flashMessageContainer',
+  10 => 'persistenceManager',
 );
 	}
 }

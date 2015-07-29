@@ -24,6 +24,19 @@ class UserRepository_Original extends Repository {
         return $result->toArray();
     }
 
+    /**
+     * @param \SKL\Test\Domain\Model\User $user
+     * @return \SKL\Test\Domain\Model\User
+     */
+    public function findUserIdentity (\SKL\Test\Domain\Model\User $user) {
+      $users = $this->findAll()->toArray();
+      for ($i=0; $i<count($users); $i++) {
+        if ($users[$i]->getName() === $user->getName()) {
+          return $users[$i];
+        }
+      }
+    }
+
 }
 namespace SKL\Test\Domain\Repository;
 
