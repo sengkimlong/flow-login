@@ -1,0 +1,56 @@
+Uncaught exception #1 in line 518 of /var/www/html/flow-login/Packages/Libraries/doctrine/orm/lib/Doctrine/ORM/PersistentCollection.php: Warning: Missing argument 1 for Doctrine\ORM\PersistentCollection::get(), called in /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Reflection/ObjectAccess.php on line 136 and defined in /var/www/html/flow-login/Packages/Libraries/doctrine/orm/lib/Doctrine/ORM/PersistentCollection.php line 518
+
+39 TYPO3\Flow\Error\ErrorHandler::handleError(2, "Missing argument 1 for Doctrine\ORM\PersistentCollection::get(), called in /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Reflection/ObjectAccess.php on line 136 and defined", "/var/www/html/flow-login/Packages/Libraries/doctrine/orm/lib/Doctrine/ORM/PersistentCollection.php", 518, array|1|)
+38 Doctrine\ORM\PersistentCollection::get()
+37 TYPO3\Flow\Reflection\ObjectAccess::getPropertyInternal(Doctrine\ORM\PersistentCollection, "", FALSE, TRUE)
+36 TYPO3\Flow\Reflection\ObjectAccess::getProperty(Doctrine\ORM\PersistentCollection, "")
+35 TYPO3\Fluid\Core\Parser\SyntaxTree\ObjectAccessorNode_Original::getPropertyPath(TYPO3\Fluid\Core\ViewHelper\TemplateVariableContainer, "post.categories.", TYPO3\Fluid\Core\Rendering\RenderingContext)
+34 FluidCache_SKL_Post_Post_action_edit_bb3f4d90e3e535a31d849ce4a877f82afc782df6::{closure}()
+33 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::renderChildren()
+32 TYPO3\Fluid\ViewHelpers\DebugViewHelper_Original::render("Test", FALSE)
+31 call_user_func_array(array|2|, array|2|)
+30 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+29 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+28 FluidCache_SKL_Post_Post_action_edit_bb3f4d90e3e535a31d849ce4a877f82afc782df6::{closure}()
+27 TYPO3\Fluid\ViewHelpers\ForViewHelper_Original::renderStatic(array|5|, Closure, TYPO3\Fluid\Core\Rendering\RenderingContext)
+26 FluidCache_SKL_Post_Post_action_edit_bb3f4d90e3e535a31d849ce4a877f82afc782df6::{closure}()
+25 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::renderChildren()
+24 TYPO3\Fluid\ViewHelpers\FormViewHelper_Original::render("update", array|0|, NULL, NULL, NULL, SKL\Post\Domain\Model\Post, "", "", array|0|, FALSE, FALSE, array|0|, NULL, NULL, "post", FALSE)
+23 call_user_func_array(array|2|, array|16|)
+22 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+21 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+20 FluidCache_SKL_Post_Post_action_edit_bb3f4d90e3e535a31d849ce4a877f82afc782df6::section_4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469(TYPO3\Fluid\Core\Rendering\RenderingContext)
+19 TYPO3\Fluid\View\AbstractTemplateView::renderSection("Content", array|1|, FALSE)
+18 TYPO3\Fluid\ViewHelpers\RenderViewHelper_Original::render("Content", NULL, array|0|, FALSE)
+17 call_user_func_array(array|2|, array|4|)
+16 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+15 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+14 FluidCache_SKL_Post_layout_Default_834a4fc81c3f21eabea26f6c17b3959b56c68248::render(TYPO3\Fluid\Core\Rendering\RenderingContext)
+13 TYPO3\Fluid\View\AbstractTemplateView::render()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /skl.post/post/edit?post%5B__identity%5D=5547fce3-a54e-f3b7-f354-0d06bd7a0b1b HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Referer: http://local.project.dev/skl.post/post/index
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+
+
+
+HTTP RESPONSE:
+[response was empty]

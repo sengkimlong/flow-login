@@ -1,0 +1,54 @@
+Uncaught exception #1297759968 in line 271 of /var/www/html/flow-login/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Flow_Mvc_Controller_Argument.php: Exception while property mapping for target type "SKL\Post\Domain\Model\Post", at property path "categories": It is not allowed to map property "__identity". You need to use $propertyMappingConfiguration->allowProperties('__identity') to enable mapping of this property.
+
+14 TYPO3\Flow\Property\PropertyMapper_Original::convert(array|4|, "SKL\Post\Domain\Model\Post", TYPO3\Flow\Mvc\Controller\MvcPropertyMappingConfiguration)
+13 TYPO3\Flow\Mvc\Controller\Argument_Original::setValue(array|4|)
+12 TYPO3\Flow\Mvc\Controller\AbstractController::mapRequestArgumentsToControllerArguments()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+Previous exception: Uncaught exception #1335969887 in line 182 of /var/www/html/flow-login/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Flow_Property_PropertyMapper.php: It is not allowed to map property "__identity". You need to use $propertyMappingConfiguration->allowProperties('__identity') to enable mapping of this property.
+
+16 TYPO3\Flow\Property\PropertyMapper_Original::doMapping(array|1|, "Doctrine\Common\Collections\Collection<SKL\Post\Domain\Model\Category>", TYPO3\Flow\Mvc\Controller\MvcPropertyMappingConfiguration, array|1|)
+15 TYPO3\Flow\Property\PropertyMapper_Original::doMapping(array|4|, "SKL\Post\Domain\Model\Post", TYPO3\Flow\Mvc\Controller\MvcPropertyMappingConfiguration, array|1|)
+14 TYPO3\Flow\Property\PropertyMapper_Original::convert(array|4|, "SKL\Post\Domain\Model\Post", TYPO3\Flow\Mvc\Controller\MvcPropertyMappingConfiguration)
+13 TYPO3\Flow\Mvc\Controller\Argument_Original::setValue(array|4|)
+12 TYPO3\Flow\Mvc\Controller\AbstractController::mapRequestArgumentsToControllerArguments()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /skl.post/post/update HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Content-Length: 1065
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: http://local.project.dev
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Referer: http://local.project.dev/skl.post/post/edit?post%5B__identity%5D=5547fce3-a54e-f3b7-f354-0d06bd7a0b1b
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+post%5B__identity%5D=5547fce3-a54e-f3b7-f354-0d06bd7a0b1b&__referrer%5B%40package%5D=SKL.Post&__referrer%5B%40subpackage%5D=&__referrer%5B%40controller%5D=Post&__referrer%5B%40action%5D=edit&__referrer%5Barguments%5D=YToxOntzOjQ6InBvc3QiO2E6MTp7czoxMDoiX19pZGVudGl0eSI7czozNjoiNTU0N2ZjZTMtYTU0ZS1mM2I3LWYzNTQtMGQwNmJkN2EwYjFiIjt9fQ%3D%3D395e2cdafe06b8534223e72a4ad9b7c5fd1d7166&post%5Bcategories%5D%5B__identity%5D=&post%5Bauthors%5D=&__trustedProperties=a%3A2%3A%7Bs%3A4%3A%22post%22%3Ba%3A4%3A%7Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A10%3A%22categories%22%3Ba%3A1%3A%7Bs%3A10%3A%22__identity%22%3Ba%3A2%3A%7Bi%3A0%3Bi%3A1%3Bi%3A1%3Bi%3A1%3B%7D%7Ds%3A7%3A%22authors%22%3Ba%3A2%3A%7Bi%3A0%3Bi%3A1%3Bi%3A1%3Bi%3A1%3B%7Ds%3A10%3A%22__identity%22%3Bi%3A1%3B%7Di%3A0%3Bi%3A1%3B%7D875163cc772d99a014660b8c55e7300925a04406&post%5Bname%5D=The+World+of+Wolf&post%5Bcategories%5D%5B__identity%5D%5B%5D=765c3b67-8c06-01ee-4125-4cb93d698868&post%5Bcategories%5D%5B__identity%5D%5B%5D=a1a687b7-5e44-0d77-b4c9-83a00ab7fd26&post%5Bauthors%5D%5B%5D=a347a93a-d01b-ffdb-e8f0-a157af771953
+
+HTTP RESPONSE:
+[response was empty]

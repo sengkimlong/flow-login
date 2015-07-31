@@ -1,0 +1,38 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Edit post "{post.name}"</f:section>
+
+<f:section name="Content">
+	<f:form action="update" object="{post}" objectName="post">
+		<table>
+			<tr>
+				<td><label for="name">Name</label></td>
+				<td><f:form.textfield property="name" id="name" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<f:for each="{listCategory}" as="cat" key="number">
+
+						<!--<label>{cat.title}-->
+							<!--<f:form.checkbox property="categories" value="{cat}" multiple="true" checked="{post.categories}" />-->
+						<!--</label>-->
+                        <f:debug title="Test">
+
+                        </f:debug>
+
+					</f:for>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<f:form.select property="authors" optionLabelField="name" options="{listAuthor}" size="3" prependOptionLabel="-Select One-" multiple="true" />
+				</td>
+			</tr>
+			<tr>
+				<td><f:form.submit value="Update" /></td>
+			</tr>
+		</table>
+	</f:form>
+</f:section>

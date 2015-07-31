@@ -1,0 +1,13 @@
+Uncaught exception #1265213849 in line 435 of /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Object/DependencyInjection/ProxyClassBuilder.php: The object "SKL\Post\Domain\Repository\categoryRepository" which was specified as a property in the object configuration of object "SKL\Post\Controller\PostController" (automatically registered class) does not exist. Check for spelling mistakes and if that dependency is correctly configured.
+
+11 TYPO3\Flow\Object\DependencyInjection\ProxyClassBuilder::buildPropertyInjectionCodeByString(TYPO3\Flow\Object\Configuration\Configuration, TYPO3\Flow\Object\Configuration\ConfigurationProperty, "categoryRepository", "SKL\Post\Domain\Repository\categoryRepository")
+10 TYPO3\Flow\Object\DependencyInjection\ProxyClassBuilder::buildPropertyInjectionCode(TYPO3\Flow\Object\Configuration\Configuration)
+9 TYPO3\Flow\Object\DependencyInjection\ProxyClassBuilder::build()
+8 TYPO3\Flow\Command\CoreCommandController::compileCommand(FALSE)
+7 call_user_func_array(array|2|, array|1|)
+6 TYPO3\Flow\Cli\CommandController::callCommandMethod()
+5 TYPO3\Flow\Cli\CommandController::processRequest(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+4 TYPO3\Flow\Mvc\Dispatcher::initiateDispatchLoop(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+2 TYPO3\Flow\Cli\CommandRequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()

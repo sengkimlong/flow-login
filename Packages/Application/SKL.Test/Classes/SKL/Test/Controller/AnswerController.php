@@ -61,7 +61,9 @@ class AnswerController extends ActionController {
 
 		for($i=0; $i<count($answers['obj']);$i++) {
 			$question = $this->questionRepository->findByIdentifier($answers['obj']['question-'.($i+1)]['__identity']);
+
 			$user = $_SESSION['identity'];
+
 			$answer = new \SKL\Test\Domain\Model\Answer();
 
 			$answer->setQuestion($question);

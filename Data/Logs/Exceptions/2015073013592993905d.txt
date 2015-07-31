@@ -1,0 +1,136 @@
+Uncaught exception in line 116 of /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php: An exception occurred while executing 'SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.title AS title1, s0_.form AS form2 FROM skl_post_domain_model_category s0_':
+
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 's0_.form' in 'field list'
+
+37 Doctrine\DBAL\Driver\AbstractMySQLDriver::convertException("An exception occurred while executing 'SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.title AS title1, s0_.form AS form2 FROM skl_post_domain_model_category s0_':
+
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 's0_.form' in 'field list'", Doctrine\DBAL\Driver\PDOException)
+36 Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Doctrine\DBAL\Driver\PDOMySql\Driver, Doctrine\DBAL\Driver\PDOException, "SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.title AS title1, s0_.form AS form2 FROM skl_post_domain_model_category s0_", array|0|)
+35 Doctrine\DBAL\Connection::executeQuery("SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.title AS title1, s0_.form AS form2 FROM skl_post_domain_model_category s0_", array|0|, array|0|, NULL)
+34 Doctrine\ORM\Query\Exec\SingleSelectExecutor::execute(Doctrine\DBAL\Connection, array|0|, array|0|)
+33 Doctrine\ORM\Query::_doExecute()
+32 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+31 Doctrine\ORM\AbstractQuery::getResult()
+30 TYPO3\Flow\Persistence\Doctrine\Query_Original::getResult()
+29 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+28 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::rewind()
+27 TYPO3\Fluid\ViewHelpers\ForViewHelper_Original::renderStatic(array|5|, Closure, TYPO3\Fluid\Core\Rendering\RenderingContext)
+26 FluidCache_SKL_Post_Category_action_index_5f1afd4db8df5147f5d90bbb1fa24fa8523b7e00::{closure}()
+25 TYPO3\Fluid\Core\ViewHelper\AbstractConditionViewHelper::renderThenChild()
+24 TYPO3\Fluid\ViewHelpers\IfViewHelper_Original::render(TRUE)
+23 call_user_func_array(array|2|, array|1|)
+22 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+21 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+20 FluidCache_SKL_Post_Category_action_index_5f1afd4db8df5147f5d90bbb1fa24fa8523b7e00::section_4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469(TYPO3\Fluid\Core\Rendering\RenderingContext)
+19 TYPO3\Fluid\View\AbstractTemplateView::renderSection("Content", array|1|, FALSE)
+18 TYPO3\Fluid\ViewHelpers\RenderViewHelper_Original::render("Content", NULL, array|0|, FALSE)
+17 call_user_func_array(array|2|, array|4|)
+16 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+15 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+14 FluidCache_SKL_Post_layout_Default_834a4fc81c3f21eabea26f6c17b3959b56c68248::render(TYPO3\Fluid\Core\Rendering\RenderingContext)
+13 TYPO3\Fluid\View\AbstractTemplateView::render()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+Previous exception: Uncaught exception #42S22 in line 833 of /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Connection.php: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's0_.form' in 'field list'
+
+36 Doctrine\DBAL\Driver\PDOConnection::query("SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.title AS title1, s0_.form AS form2 FROM skl_post_domain_model_category s0_")
+35 Doctrine\DBAL\Connection::executeQuery("SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.title AS title1, s0_.form AS form2 FROM skl_post_domain_model_category s0_", array|0|, array|0|, NULL)
+34 Doctrine\ORM\Query\Exec\SingleSelectExecutor::execute(Doctrine\DBAL\Connection, array|0|, array|0|)
+33 Doctrine\ORM\Query::_doExecute()
+32 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+31 Doctrine\ORM\AbstractQuery::getResult()
+30 TYPO3\Flow\Persistence\Doctrine\Query_Original::getResult()
+29 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+28 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::rewind()
+27 TYPO3\Fluid\ViewHelpers\ForViewHelper_Original::renderStatic(array|5|, Closure, TYPO3\Fluid\Core\Rendering\RenderingContext)
+26 FluidCache_SKL_Post_Category_action_index_5f1afd4db8df5147f5d90bbb1fa24fa8523b7e00::{closure}()
+25 TYPO3\Fluid\Core\ViewHelper\AbstractConditionViewHelper::renderThenChild()
+24 TYPO3\Fluid\ViewHelpers\IfViewHelper_Original::render(TRUE)
+23 call_user_func_array(array|2|, array|1|)
+22 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+21 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+20 FluidCache_SKL_Post_Category_action_index_5f1afd4db8df5147f5d90bbb1fa24fa8523b7e00::section_4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469(TYPO3\Fluid\Core\Rendering\RenderingContext)
+19 TYPO3\Fluid\View\AbstractTemplateView::renderSection("Content", array|1|, FALSE)
+18 TYPO3\Fluid\ViewHelpers\RenderViewHelper_Original::render("Content", NULL, array|0|, FALSE)
+17 call_user_func_array(array|2|, array|4|)
+16 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+15 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+14 FluidCache_SKL_Post_layout_Default_834a4fc81c3f21eabea26f6c17b3959b56c68248::render(TYPO3\Fluid\Core\Rendering\RenderingContext)
+13 TYPO3\Fluid\View\AbstractTemplateView::render()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+Previous exception: Uncaught exception #42S22 in line 104 of /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's0_.form' in 'field list'
+
+37 PDO::query("SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.title AS title1, s0_.form AS form2 FROM skl_post_domain_model_category s0_")
+36 Doctrine\DBAL\Driver\PDOConnection::query("SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.title AS title1, s0_.form AS form2 FROM skl_post_domain_model_category s0_")
+35 Doctrine\DBAL\Connection::executeQuery("SELECT s0_.persistence_object_identifier AS persistence_object_identifier0, s0_.title AS title1, s0_.form AS form2 FROM skl_post_domain_model_category s0_", array|0|, array|0|, NULL)
+34 Doctrine\ORM\Query\Exec\SingleSelectExecutor::execute(Doctrine\DBAL\Connection, array|0|, array|0|)
+33 Doctrine\ORM\Query::_doExecute()
+32 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+31 Doctrine\ORM\AbstractQuery::getResult()
+30 TYPO3\Flow\Persistence\Doctrine\Query_Original::getResult()
+29 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+28 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::rewind()
+27 TYPO3\Fluid\ViewHelpers\ForViewHelper_Original::renderStatic(array|5|, Closure, TYPO3\Fluid\Core\Rendering\RenderingContext)
+26 FluidCache_SKL_Post_Category_action_index_5f1afd4db8df5147f5d90bbb1fa24fa8523b7e00::{closure}()
+25 TYPO3\Fluid\Core\ViewHelper\AbstractConditionViewHelper::renderThenChild()
+24 TYPO3\Fluid\ViewHelpers\IfViewHelper_Original::render(TRUE)
+23 call_user_func_array(array|2|, array|1|)
+22 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+21 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+20 FluidCache_SKL_Post_Category_action_index_5f1afd4db8df5147f5d90bbb1fa24fa8523b7e00::section_4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469(TYPO3\Fluid\Core\Rendering\RenderingContext)
+19 TYPO3\Fluid\View\AbstractTemplateView::renderSection("Content", array|1|, FALSE)
+18 TYPO3\Fluid\ViewHelpers\RenderViewHelper_Original::render("Content", NULL, array|0|, FALSE)
+17 call_user_func_array(array|2|, array|4|)
+16 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+15 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+14 FluidCache_SKL_Post_layout_Default_834a4fc81c3f21eabea26f6c17b3959b56c68248::render(TYPO3\Fluid\Core\Rendering\RenderingContext)
+13 TYPO3\Fluid\View\AbstractTemplateView::render()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+
+
+
+HTTP RESPONSE:
+[response was empty]

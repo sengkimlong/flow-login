@@ -1,0 +1,20 @@
+<f:layout name="Default" />
+
+<f:section name="Title">New category</f:section>
+
+<f:section name="Content">
+	<p>Just fill out the following form to create a new category:</p>
+
+	<f:form action="create" objectName="newCategory">
+		<ol>
+			<li>
+				<label for="name">Title</label>
+				<f:form.textfield property="title" id="title" />
+			</li>
+
+			<li>
+				<f:form.submit value="Create" />
+			</li>
+		</ol>
+	</f:form>
+</f:section>

@@ -1,0 +1,17 @@
+-
+  name: 'Home'
+  uriPattern: ''
+  defaults:
+    '@package': 'SKL.Post'
+    '@controller': 'Category'
+    '@action': 'index'
+    '@format': 'html'
+
+-
+  name: 'Post'
+  uriPattern: 'posts/new'
+  defaults:
+    '@package': 'SKL.Post'
+    '@controller': 'Post'
+    '@action': 'new'
+    '@format': 'html'

@@ -1,0 +1,37 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Show post"{post.name}"</f:section>
+
+<f:section name="Content">
+	<table border="1" style="border:1px solid black;border-collapse: collapse">
+		<tr>
+			<th>Name</th>
+			<td>{post.name}</td>
+		</tr>
+		<tr>
+			<th>Content</th>
+			<td>{post.content}</td>
+		</tr>
+		<tr>
+			<th>Category:</th>
+			<td>
+				<f:for each="{post.categories}" as="category">
+					<ul>
+						<li>{category.title}</li>
+					</ul>
+				</f:for>
+			</td>
+		</tr>
+		<tr>
+			<th>Author:</th>
+			<td>
+				<f:for each="{post.authors}" as="author">
+					<ul>
+						<li>{author.name}</li>
+					</ul>
+				</f:for>
+			</td>
+		</tr>
+	</table>
+	<f:link.action action="index">Back</f:link.action>
+</f:section>

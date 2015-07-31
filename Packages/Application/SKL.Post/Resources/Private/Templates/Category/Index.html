@@ -1,0 +1,27 @@
+<f:layout name="Default" />
+
+<f:section name="Title">A list of categories</f:section>
+
+<f:section name="Content">
+	<f:if condition="{categories}">
+		<f:then>
+			<ul>
+				<f:for each="{categories}" as="category">
+					<li>
+						<f:link.action action="show" arguments="{category: category}">{category.title}</f:link.action>
+						<f:link.action action="edit" arguments="{category: category}">Edit</f:link.action>
+						<f:form action="delete" arguments="{category: category}">
+							<f:form.submit value="Delete" />
+						</f:form>
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<p>No categories created yet.</p>
+		</f:else>
+	</f:if>
+	<p><f:link.action action="new">Create a new category</f:link.action></p>
+	<p><f:link.action action="new" controller="post">Create new post</f:link.action></p>
+	<p><f:link.action action="index" controller="post">View Post</f:link.action></p>
+</f:section>

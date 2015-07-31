@@ -1,4 +1,4 @@
-#                                                                        #
+                                                                       #
 # Routes configuration                                                   #
 #                                                                        #
 # This file contains the configuration for the MVC router.               #
@@ -12,6 +12,15 @@
 #
 # If the package "Welcome" is installed, its fallback route will point to an
 # informative welcome screen.
+
+-
+  name: 'Post'
+  uriPattern: '<PostSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    PostSubroutes:
+      package: SKL.Post
 
 -
   name: 'Online Question'

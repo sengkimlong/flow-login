@@ -1,0 +1,75 @@
+Uncaught exception #1224485398 in line 529 of /var/www/html/flow-login/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Fluid_Core_Parser_TemplateParser.php: Templating tags not properly nested. Expected: TYPO3\Fluid\ViewHelpers\ForViewHelper; Actual: TYPO3\Fluid\ViewHelpers\IfViewHelper
+
+16 TYPO3\Fluid\Core\Parser\TemplateParser_Original::closingViewHelperTagHandler(TYPO3\Fluid\Core\Parser\ParsingState, "f", "if")
+15 TYPO3\Fluid\Core\Parser\TemplateParser_Original::buildObjectTree(array|33|, 2)
+14 TYPO3\Fluid\Core\Parser\TemplateParser_Original::parse("<f:layout name="Default" />
+
+<f:section name="Title">Edit post "{post.name}"</f:section>
+
+<f:section name="Content">
+	<f:form action="update" object="{post}" objectName="post">
+		<table>
+			<tr>
+				<td><label for="name">Name</label></td>
+				<td><f:form.textfield property="name" id="name" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<f:for each="{listCategory}" as="cat" iteration="key">
+						<f:if condition="{cat} == {post.categories[{key.cycle}]}>
+							<f:then>
+								<label>{cat.title}
+									<f:form.checkbox property="categories" value="{cat}" multiple="true" checked />
+								</label>
+							</f:then>
+							<f:else>
+								<label>{cat.title}
+									<f:form.checkbox property="categories" value="{cat}" multiple="true" checked />
+								</label>
+							</f:else>
+						</f:if>
+					</f:for>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<f:form.select property="authors" optionLabelField="name" options="{listAuthor}" size="3" prependOptionLabel="-Select One-" multiple="true" />
+				</td>
+			</tr>
+			<tr>
+				<td><f:form.submit value="Update" /></td>
+			</tr>
+		</table>
+	</f:form>
+</f:section>")
+13 TYPO3\Fluid\View\AbstractTemplateView::render()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /skl.post/post/edit?post%5B__identity%5D=5547fce3-a54e-f3b7-f354-0d06bd7a0b1b HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Referer: http://local.project.dev/skl.post/post/index
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]

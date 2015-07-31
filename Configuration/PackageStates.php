@@ -308,6 +308,14 @@ return array (
       'manifestPath' => '',
       'composerName' => 'skl/test',
     ),
+    'SKL.Post' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'Application/SKL.Post/',
+      'classesPath' => 'Classes/',
+      'manifestPath' => '',
+      'composerName' => 'skl/post',
+    ),
   ),
   'version' => 4,
 );

@@ -1,0 +1,39 @@
+Uncaught exception #1169047619 in line 271 of /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Cache/Backend/SimpleFileBackend.php: Could not unlink file "/var/www/html/flow-login/Data/Temporary/Development/Cache/Data/Flow_Persistence_Doctrine/60de03be83ac86c04e90d857d9d3d258".
+
+23 TYPO3\Flow\Utility\Files::emptyDirectoryRecursively("/var/www/html/flow-login/Data/Temporary/Development/Cache/Data/Flow_Persistence_Doctrine/")
+22 TYPO3\Flow\Cache\Backend\SimpleFileBackend::flush()
+21 TYPO3\Flow\Cache\Frontend\AbstractFrontend::flush()
+20 TYPO3\Flow\Cache\CacheManager::flushClassCachesByChangedFiles(array|5|)
+19 TYPO3\Flow\Cache\CacheManager::flushSystemCachesByChangedFiles("Flow_ClassFiles", array|5|, "TYPO3\Flow\Monitor\FileMonitor::filesHaveChanged", "TYPO3\Flow\Monitor\FileMonitor::filesHaveChanged", "TYPO3\Flow\Monitor\FileMonitor::filesHaveChanged")
+18 call_user_func_array(array|2|, array|5|)
+17 TYPO3\Flow\SignalSlot\Dispatcher::dispatch("TYPO3\Flow\Monitor\FileMonitor", "filesHaveChanged", array|2|)
+16 TYPO3\Flow\Monitor\FileMonitor_Original::emitFilesHaveChanged("Flow_ClassFiles", array|5|)
+15 TYPO3\Flow\Monitor\FileMonitor_Original::detectChanges()
+14 TYPO3\Flow\Core\Booting\Scripts::initializeSystemFileMonitor(TYPO3\Flow\Core\Bootstrap)
+13 call_user_func(array|2|, TYPO3\Flow\Core\Bootstrap)
+12 TYPO3\Flow\Core\Booting\Step::__invoke(TYPO3\Flow\Core\Bootstrap)
+11 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+10 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+9 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+8 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+7 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+6 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+5 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+4 TYPO3\Flow\Core\Booting\Sequence::invoke(TYPO3\Flow\Core\Bootstrap)
+3 TYPO3\Flow\Http\RequestHandler::boot()
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+
+
+
+HTTP RESPONSE:
+[response was empty]

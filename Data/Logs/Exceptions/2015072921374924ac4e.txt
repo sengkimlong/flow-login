@@ -1,0 +1,55 @@
+Uncaught exception #1302855001 in line 74 of /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Reflection/ObjectAccess.php: The property "posts" on the subject does not exist.
+
+34 TYPO3\Flow\Reflection\ObjectAccess::getPropertyInternal(Doctrine\ORM\PersistentCollection, "posts", TRUE, TRUE)
+33 TYPO3\Flow\Reflection\ObjectAccess::getProperty(Doctrine\ORM\PersistentCollection, "posts", TRUE)
+32 TYPO3\Flow\Validation\Validator\GenericObjectValidator_Original::getPropertyValue(Doctrine\ORM\PersistentCollection, "posts")
+31 TYPO3\Flow\Validation\Validator\GenericObjectValidator_Original::isValid(Doctrine\ORM\PersistentCollection)
+30 TYPO3\Flow\Validation\Validator\GenericObjectValidator_Original::validate(Doctrine\ORM\PersistentCollection)
+29 TYPO3\Flow\Validation\Validator\ConjunctionValidator_Original::validate(Doctrine\ORM\PersistentCollection)
+28 TYPO3\Flow\Validation\Validator\GenericObjectValidator_Original::checkProperty(Doctrine\ORM\PersistentCollection, SplObjectStorage)
+27 TYPO3\Flow\Validation\Validator\GenericObjectValidator_Original::isValid(SKL\Post\Domain\Model\Post)
+26 TYPO3\Flow\Validation\Validator\GenericObjectValidator_Original::validate(SKL\Post\Domain\Model\Post)
+25 TYPO3\Flow\Validation\Validator\ConjunctionValidator_Original::validate(SKL\Post\Domain\Model\Post)
+24 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::validateObject(SKL\Post\Domain\Model\Post, SplObjectStorage)
+23 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::onFlush(Doctrine\ORM\Event\OnFlushEventArgs)
+22 Doctrine\Common\EventManager::dispatchEvent("onFlush", Doctrine\ORM\Event\OnFlushEventArgs)
+21 Doctrine\ORM\UnitOfWork::dispatchOnFlushEvent()
+20 Doctrine\ORM\UnitOfWork::commit(NULL)
+19 Doctrine\ORM\EntityManager::flush()
+18 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::persistAll()
+17 TYPO3\Flow\Package::TYPO3\Flow\{closure}(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\PostController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+16 Closure::__invoke(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\PostController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+15 call_user_func_array(array|2|, array|4|)
+14 TYPO3\Flow\SignalSlot\Dispatcher::dispatch("TYPO3\Flow\Mvc\Dispatcher", "afterControllerInvocation", array|3|)
+13 TYPO3\Flow\SignalSlot\SignalAspect_Original::forwardSignalToDispatcher(TYPO3\Flow\Aop\JoinPoint)
+12 TYPO3\Flow\Aop\Advice\AbstractAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+11 TYPO3\Flow\Mvc\Dispatcher::emitAfterControllerInvocation(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\PostController)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /skl.post/post/create HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Content-Length: 740
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: http://local.project.dev
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Referer: http://local.project.dev/posts/new
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+__referrer%5B%40package%5D=SKL.Post&__referrer%5B%40subpackage%5D=&__referrer%5B%40controller%5D=Post&__referrer%5B%40action%5D=new&__referrer%5Barguments%5D=YTowOnt9d995007259979de310b21fd9e9314f34475f1794&options%5B1%5D%5B__identity%5D=&options%5B2%5D%5B__identity%5D=&__trustedProperties=a%3A3%3A%7Bs%3A7%3A%22newPost%22%3Ba%3A1%3A%7Bs%3A4%3A%22name%22%3Bi%3A1%3B%7Ds%3A7%3A%22options%22%3Ba%3A2%3A%7Bi%3A1%3Ba%3A1%3A%7Bs%3A10%3A%22__identity%22%3Bi%3A1%3B%7Di%3A2%3Ba%3A1%3A%7Bs%3A10%3A%22__identity%22%3Bi%3A1%3B%7D%7Di%3A0%3Bi%3A1%3B%7D5486e7de65e0f91772249ada396cfbe480fbc9ff&newPost%5Bname%5D=wef&options%5B1%5D%5B__identity%5D=765c3b67-8c06-01ee-4125-4cb93d698868&options%5B2%5D%5B__identity%5D=a1a687b7-5e44-0d77-b4c9-83a00ab7fd26
+
+HTTP RESPONSE:
+<html><head><meta http-equiv="refresh" content="0;url=http://local.project.dev/skl.post/post/index"/></head></html>

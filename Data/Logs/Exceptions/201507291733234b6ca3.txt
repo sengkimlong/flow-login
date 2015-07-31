@@ -1,0 +1,28 @@
+Uncaught exception #1210858767 in line 532 of /var/www/html/flow-login/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Flow_Mvc_ActionRequest.php: Invalid argument name (must be a non-empty string).
+
+7 TYPO3\Flow\Mvc\ActionRequest_Original::setArgument(1, array|1|)
+6 TYPO3\Flow\Mvc\ActionRequest_Original::setArguments(array|9|)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /skl.post/post/create HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Content-Length: 650
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: http://local.project.dev
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Referer: http://local.project.dev/posts/new
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+__referrer%5B%40package%5D=SKL.Post&__referrer%5B%40subpackage%5D=&__referrer%5B%40controller%5D=Post&__referrer%5B%40action%5D=new&__referrer%5Barguments%5D=YTowOnt9d995007259979de310b21fd9e9314f34475f1794&1%5B__identity%5D=&2%5B__identity%5D=&__trustedProperties=a%3A4%3A%7Bs%3A7%3A%22newPost%22%3Ba%3A1%3A%7Bs%3A4%3A%22name%22%3Bi%3A1%3B%7Di%3A1%3Ba%3A1%3A%7Bs%3A10%3A%22__identity%22%3Bi%3A1%3B%7Di%3A2%3Ba%3A1%3A%7Bs%3A10%3A%22__identity%22%3Bi%3A1%3B%7Di%3A3%3Bi%3A1%3B%7Ddaef1e22730d53e2a9e2f8e14eceb4a8701fcb8f&newPost%5Bname%5D=efw&1%5B__identity%5D=765c3b67-8c06-01ee-4125-4cb93d698868&2%5B__identity%5D=a1a687b7-5e44-0d77-b4c9-83a00ab7fd26
+
+HTTP RESPONSE:
+[response was empty]

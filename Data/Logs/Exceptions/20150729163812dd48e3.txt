@@ -1,0 +1,85 @@
+Uncaught exception in line 67 of /var/www/html/flow-login/Packages/Libraries/symfony/yaml/Symfony/Component/Yaml/Yaml.php: Unable to parse in "/var/www/html/flow-login/Configuration/Routes.yaml" at line 1 (near "e#                                                                        #").
+
+16 Symfony\Component\Yaml\Parser::parse("e#                                                                        #
+# Routes configuration                                                   #
+#                                                                        #
+# This file contains the configuration for the MVC router.               #
+# Just add your own modifications as necessary.                          #
+#                                                                        #
+# Please refer to the Flow manual for possible configuration options.    #
+#                                                                        #
+
+##
+# Subroutes from the Welcome package.
+#
+# If the package "Welcome" is installed, its fallback route will point to an
+# informative welcome screen.
+
+-
+  name: 'Post'
+  uriPattern: '<PostSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    PostSubroutes:
+      package: SKL.Post
+
+-
+  name: 'Online Question'
+  uriPattern: '<OnlineQuestionSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    OnlineQuestionSubroutes:
+      package: SKL.Test
+
+-
+  name: 'Welcome'
+  uriPattern: '<WelcomeSubroutes>'
+  subRoutes:
+    WelcomeSubroutes:
+      package: TYPO3.Welcome
+
+##
+# Flow subroutes
+#
+
+-
+  name: 'Flow'
+  uriPattern: '<FlowSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    FlowSubroutes:
+      package: TYPO3.Flow
+", FALSE, FALSE)
+15 Symfony\Component\Yaml\Yaml::parse("/var/www/html/flow-login/Configuration/Routes.yaml")
+14 TYPO3\Flow\Configuration\Source\YamlSource::load("/var/www/html/flow-login/Configuration/Routes")
+13 TYPO3\Flow\Configuration\ConfigurationManager::loadConfiguration("Routes", array|38|)
+12 TYPO3\Flow\Configuration\ConfigurationManager::getConfiguration("Routes")
+11 TYPO3\Flow\Mvc\Routing\Router_Original::initializeRoutesConfiguration()
+10 TYPO3\Flow\Mvc\Routing\Router_Original::createRoutesFromConfiguration()
+9 TYPO3\Flow\Mvc\Routing\Router_Original::route(TYPO3\Flow\Http\Request)
+8 call_user_func_array(array|2|, array|1|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("route", array|1|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::route(TYPO3\Flow\Http\Request)
+5 TYPO3\Flow\Mvc\Routing\RoutingComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Host: local.project.dev
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]
