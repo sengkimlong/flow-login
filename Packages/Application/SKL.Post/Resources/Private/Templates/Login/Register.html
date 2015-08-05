@@ -1,0 +1,46 @@
+<f:layout name="Default.html" />
+
+<f:section name="Title" />
+
+<f:section name="Navigation" />
+
+<f:section name="Sidebar" />
+
+<f:section name="Content">
+    <f:section name="Title">Welcome to MyBlog</f:section>
+
+    <f:flashMessages />
+
+    <f:form action="create" controller="Login" method="post" name="loginform">
+        <div class="col-md-7 center">
+            <table class="table">
+                <tr>
+                    <td><label for="name">User: </label></td>
+                    <td><f:form.textfield class="form-control" name="name" id="name" /></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password: </label></td>
+                    <td><f:form.password class="form-control" name="pass" id="password" /></td>
+                </tr>
+                <tr>
+                    <td><label for="confirmPass">Confirm Password: </label></td>
+                    <td><f:form.password class="form-control" name="pass2" id="confirmPass" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <f:form.checkbox name="role" value="SKL.Post:Visitor" /> Visitor
+                    </td>
+                    <td>
+                        <f:form.checkbox name="role" value="SKL.Post:Admin" /> Administrator
+                    </td>
+                </tr>
+                <tr>
+                    <td><f:form.submit value="Register" /></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <f:link.action action="index">Login here</f:link.action>
+    </f:form>
+
+</f:section>

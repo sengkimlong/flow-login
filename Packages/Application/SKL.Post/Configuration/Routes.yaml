@@ -3,15 +3,86 @@
   uriPattern: ''
   defaults:
     '@package': 'SKL.Post'
-    '@controller': 'Category'
-    '@action': 'index'
+    '@controller': 'User'
+    '@action': 'register'
     '@format': 'html'
 
+#-
+#  name: 'default'
+#  uriPattern: '{@controller}(/{@action})'
+#  defaults:
+#    '@action': 'index'
+#    '@format': 'html'
+#    '@package': 'SKL.Post'
+#  routeParts:
+#    post:
+#      objectType: 'SKL\Post\Domain\Model\Post'
+#      uriPattern: '{name}'
+
 -
-  name: 'Post'
-  uriPattern: 'posts/new'
+  name: 'Category'
+  uriPattern: 'category/{@action}/{category}'
+  defaults:
+    '@package': 'SKL.Post'
+    '@controller': 'Category'
+    '@format': 'html'
+  routeParts:
+    category:
+      objectType: 'SKL\Post\Domain\Model\Category'
+      uriPattern: '{title}'
+
+-
+  name: 'post'
+  uriPattern: 'post/{@action}/{post}'
   defaults:
     '@package': 'SKL.Post'
     '@controller': 'Post'
-    '@action': 'new'
     '@format': 'html'
+  routeParts:
+    post:
+      objectType: 'SKL\Post\Domain\Model\Post'
+      uriPattern: '{name}'
+
+-
+  name: 'Author'
+  uriPattern: 'author/{@action}/{author}'
+  defaults:
+    '@package': 'SKL.Post'
+    '@controller': 'Author'
+    '@format': 'html'
+  routeParts:
+    author:
+      objectType: 'SKL\Post\Domain\Model\Author'
+      uriPattern: '{name}'
+
+-
+  name: 'post'
+  uriPattern: '{@controller}(/{@action})'
+  defaults:
+    '@action': 'index'
+    '@package': 'SKL.Post'
+    '@format': 'html'
+
+#-
+#  name: 'Post'
+#  uriPattern: 'posts/{@action}/{post.name}'
+#  defaults:
+#    '@package': 'SKL.Post'
+#    '@controller': 'Post'
+#  routeParts:
+#    post:
+#      objectType: 'SKL\Post\Domain\Model\Post'
+#
+#-
+#  name: 'Category'
+#  uriPattern: 'categories/{@action}'
+#  defaults:
+#    '@package': 'SKL.Post'
+#    '@controller': 'Category'
+#
+#-
+#  name: 'Post'
+#  uriPattern: 'authors/{@action}'
+#  defaults:
+#    '@package': 'SKL.Post'
+#    '@controller': 'Author'

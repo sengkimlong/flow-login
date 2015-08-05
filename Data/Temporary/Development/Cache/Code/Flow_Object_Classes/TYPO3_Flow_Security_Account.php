@@ -347,6 +347,7 @@ use TYPO3\Flow\Annotations as Flow;
 /**
  * An account model
  * @\TYPO3\Flow\Annotations\Entity
+ * @\TYPO3\Flow\Annotations\Entity
  */
 class Account extends Account_Original implements \TYPO3\Flow\Object\Proxy\ProxyInterface, \TYPO3\Flow\Persistence\Aspect\PersistenceMagicInterface {
 

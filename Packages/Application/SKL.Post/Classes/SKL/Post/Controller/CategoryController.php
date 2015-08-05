@@ -18,11 +18,35 @@ class CategoryController extends ActionController {
 	 */
 	protected $categoryRepository;
 
+    /**
+     * @var \TYPO3\Flow\Security\Context
+     */
+    protected $securityContext;
+
+    /**
+     * Injects the security context
+     *
+     * @param \TYPO3\Flow\Security\Context $securityContext The security context
+     * @return void
+     */
+    public function injectSecurityContext(\TYPO3\Flow\Security\Context $securityContext) {
+        $this->securityContext = $securityContext;
+    }
+
+    /**
+     * @return void
+     */
+    public function homeAction() {
+        $this->view->assign('listCategories', $this->categoryRepository->findAll());
+    }
+
 	/**
 	 * @return void
 	 */
 	public function indexAction() {
-		$this->view->assign('categories', $this->categoryRepository->findAll());
+        $account = $this->securityContext->getAccount();
+        $this->view->assign('usrname',$account->getAccountIdentifier());
+		$this->view->assign('listCategories', $this->categoryRepository->findAll());
 	}
 
 	/**
@@ -30,14 +54,20 @@ class CategoryController extends ActionController {
 	 * @return void
 	 */
 	public function showAction(Category $category) {
-		$this->view->assign('category', $category);
+        $account = $this->securityContext->getAccount();
+        $this->view->assign('usrname',$account->getAccountIdentifier());
+        $this->view->assign('listCategories', $this->categoryRepository->findAll());
+        $this->view->assign('category', $category);
 	}
 
 	/**
 	 * @return void
 	 */
 	public function newAction() {
-	}
+        $account = $this->securityContext->getAccount();
+        $this->view->assign('usrname',$account->getAccountIdentifier());
+        $this->view->assign('listCategories', $this->categoryRepository->findAll());
+    }
 
 	/**
 	 * @param \SKL\Post\Domain\Model\Category $newCategory
@@ -54,7 +84,10 @@ class CategoryController extends ActionController {
 	 * @return void
 	 */
 	public function editAction(Category $category) {
-		$this->view->assign('category', $category);
+        $account = $this->securityContext->getAccount();
+        $this->view->assign('usrname',$account->getAccountIdentifier());
+        $this->view->assign('category', $category);
+        $this->view->assign('listCategories', $this->categoryRepository->findAll());
 	}
 
 	/**

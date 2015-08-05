@@ -1,0 +1,27 @@
+Uncaught exception #1355480641 in line 257 of /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Core/Booting/Scripts.php: The policy configuration for package "SKL.Post" is not valid.
+It contains following error(s):
+  * deprecated "resources" options
+  * deprecated "acls" options
+ Make sure to run all code migrations.
+
+  Type: TYPO3\Flow\Configuration\Exception
+  Code: 1415717875
+  File: Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Configuration/Configuratio
+        nManager.php
+  Line: 781
+
+Open Data/Logs/Exceptions/201508041140194367e2.txt for a full stack trace.
+
+13 TYPO3\Flow\Core\Booting\Scripts::executeCommand("typo3.flow:core:compile", array|15|)
+12 TYPO3\Flow\Core\Booting\Scripts::initializeProxyClasses(TYPO3\Flow\Core\Bootstrap)
+11 call_user_func(array|2|, TYPO3\Flow\Core\Bootstrap)
+10 TYPO3\Flow\Core\Booting\Step::__invoke(TYPO3\Flow\Core\Bootstrap)
+9 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+8 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+7 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+6 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+5 TYPO3\Flow\Core\Booting\Sequence::invoke(TYPO3\Flow\Core\Bootstrap)
+4 TYPO3\Flow\Cli\CommandRequestHandler::boot("Runtime")
+3 TYPO3\Flow\Cli\CommandRequestHandler::handleRequest()
+2 TYPO3\Flow\Core\Bootstrap::run()
+1 require("/var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Scripts/flow.php")

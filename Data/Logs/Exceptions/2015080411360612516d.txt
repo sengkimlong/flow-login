@@ -1,0 +1,25 @@
+Uncaught exception #1415717875 in line 476 of /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Configuration/ConfigurationManager.php: The policy configuration for package "SKL.Post" is not valid.
+It contains following error(s):
+  * deprecated "resources" options
+  * deprecated "acls" options
+ Make sure to run all code migrations.
+
+19 TYPO3\Flow\Configuration\ConfigurationManager::validatePolicyConfiguration(array|3|, TYPO3\Flow\Package\Package)
+18 TYPO3\Flow\Configuration\ConfigurationManager::loadConfiguration("Policy", array|38|)
+17 TYPO3\Flow\Configuration\ConfigurationManager::getConfiguration("Policy")
+16 TYPO3\Flow\Security\Policy\PolicyService::initialize()
+15 TYPO3\Flow\Security\Policy\PolicyService::getAllPrivilegesByType("TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilegeInterface")
+14 TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilegePointcutFilter::buildPointcutFilters()
+13 TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilegePointcutFilter::reduceTargetClassNames(TYPO3\Flow\Aop\Builder\ClassNameIndex)
+12 TYPO3\Flow\Aop\Pointcut\PointcutFilterComposite::reduceTargetClassNames(TYPO3\Flow\Aop\Builder\ClassNameIndex)
+11 TYPO3\Flow\Aop\Pointcut\Pointcut::reduceTargetClassNames(TYPO3\Flow\Aop\Builder\ClassNameIndex)
+10 TYPO3\Flow\Aop\AspectContainer::reduceTargetClassNames(TYPO3\Flow\Aop\Builder\ClassNameIndex)
+9 TYPO3\Flow\Aop\Builder\ProxyClassBuilder::build()
+8 TYPO3\Flow\Command\CoreCommandController::compileCommand(FALSE)
+7 call_user_func_array(array|2|, array|1|)
+6 TYPO3\Flow\Cli\CommandController::callCommandMethod()
+5 TYPO3\Flow\Cli\CommandController::processRequest(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+4 TYPO3\Flow\Mvc\Dispatcher::initiateDispatchLoop(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+2 TYPO3\Flow\Cli\CommandRequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()

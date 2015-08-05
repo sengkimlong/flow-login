@@ -1,18 +1,67 @@
 <f:layout name="Default" />
 
-<f:section name="Title">Edit category "{category.name}"</f:section>
+<f:section name="Title">Edit category "{category.title}"</f:section>
+
+<f:section name="Navigation">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MyBlog</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navigation">
+                <ul class="nav navbar-nav">
+                    <f:for each="{listCategories}" as="navCategory">
+                        <li>
+                            <f:link.action action="show" controller="category" arguments="{category: navCategory}">{navCategory.title}</f:link.action>
+                        </li>
+                    </f:for>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{usrname} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><f:link.action action="index" controller="User">Profile</f:link.action></li>
+                            <li><f:link.action action="logout" controller="Login">Logout</f:link.action></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</f:section>
+
+<f:section name="Sidebar">
+    <h3>Category: </h3>
+    <p><f:link.action action="index" controller="category">View Category</f:link.action></p>
+    <p><f:link.action action="new" controller="category">Create a new category</f:link.action></p>
+    <h3>Post: </h3>
+    <p><f:link.action action="index" controller="post">View Post</f:link.action></p>
+    <p><f:link.action action="new" controller="post">Create new post</f:link.action></p>
+    <h3>Author: </h3>
+    <p><f:link.action action="index" controller="author">View Author</f:link.action></p>
+    <p><f:link.action action="new" controller="author">Create New Author</f:link.action></p>
+</f:section>
 
 <f:section name="Content">
 	<f:form action="update" object="{category}" objectName="category">
-		<ol>
-			<li>
-				<label for="name">Title</label>
-				<f:form.textfield property="title" id="title" />
-			</li>
-
-			<li>
-				<f:form.submit value="Update" />
-			</li>
-		</ol>
+		<div class="col-md-8 col-sm-8 col-xs-12">
+            <table class="table">
+                <tr>
+                    <td><label for="title">Title</label></td>
+                    <td><f:form.textfield class="form-control" property="title" id="title" /></td>
+                </tr>
+                <tr>
+                    <td><f:form.submit class="btn btn-primary" value="Update" /></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
 	</f:form>
 </f:section>

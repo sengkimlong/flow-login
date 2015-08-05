@@ -1,0 +1,18 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Edit setup "{setup.name}"</f:section>
+
+<f:section name="Content">
+	<f:form action="update" object="{setup}" objectName="setup">
+		<ol>
+			<li>
+				<label for="name">Name</label>
+				<f:form.textfield property="name" id="name" />
+			</li>
+		
+			<li>
+				<f:form.submit value="Update" />
+			</li>
+		</ol>
+	</f:form>
+</f:section>

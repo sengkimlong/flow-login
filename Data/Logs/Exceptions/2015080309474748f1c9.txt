@@ -1,0 +1,91 @@
+Uncaught exception in line 483 of /var/www/html/flow-login/Packages/Libraries/doctrine/orm/lib/Doctrine/ORM/Query/Parser.php: [Semantical Error] line 0, col 51 near 'category = ?': Error: Class SKL\Post\Domain\Model\Post has no field or association named category
+
+35 Doctrine\ORM\Query\QueryException::semanticalError("line 0, col 51 near 'category = ?': Error: Class SKL\Post\Domain\Model\Post has no field or association named category", Doctrine\ORM\Query\QueryException)
+34 Doctrine\ORM\Query\Parser::semanticalError("Class SKL\Post\Domain\Model\Post has no field or association named category", array|3|)
+33 Doctrine\ORM\Query\Parser::processDeferredPathExpressions(Doctrine\ORM\Query\AST\SelectStatement)
+32 Doctrine\ORM\Query\Parser::getAST()
+31 Doctrine\ORM\Query\Parser::parse()
+30 Doctrine\ORM\Query::_parse()
+29 Doctrine\ORM\Query::_doExecute()
+28 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+27 Doctrine\ORM\AbstractQuery::getResult()
+26 TYPO3\Flow\Persistence\Doctrine\Query_Original::getResult()
+25 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+24 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::offsetExists("title")
+23 TYPO3\Flow\Reflection\ObjectAccess::getPropertyInternal(TYPO3\Flow\Persistence\Doctrine\QueryResult, "title", FALSE, TRUE)
+22 TYPO3\Flow\Reflection\ObjectAccess::getProperty(TYPO3\Flow\Persistence\Doctrine\QueryResult, "title")
+21 TYPO3\Fluid\Core\Parser\SyntaxTree\ObjectAccessorNode_Original::getPropertyPath(TYPO3\Fluid\Core\ViewHelper\TemplateVariableContainer, "category.title", TYPO3\Fluid\Core\Rendering\RenderingContext)
+20 FluidCache_SKL_Post_Category_action_show_1f032bfa09c497743c44dece1c12bf1a362333c1::section_768e0c1c69573fb588f61f1308a015c11468e05f(TYPO3\Fluid\Core\Rendering\RenderingContext)
+19 TYPO3\Fluid\View\AbstractTemplateView::renderSection("Title", array|1|, FALSE)
+18 TYPO3\Fluid\ViewHelpers\RenderViewHelper_Original::render("Title", NULL, array|0|, FALSE)
+17 call_user_func_array(array|2|, array|4|)
+16 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+15 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+14 FluidCache_SKL_Post_layout_Default_3e26fbb3955b16ee6ac95a7d1a055f434eb27280::render(TYPO3\Fluid\Core\Rendering\RenderingContext)
+13 TYPO3\Fluid\View\AbstractTemplateView::render()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+Previous exception: Uncaught exception in line 483 of /var/www/html/flow-login/Packages/Libraries/doctrine/orm/lib/Doctrine/ORM/Query/Parser.php: SELECT e FROM SKL\Post\Domain\Model\Post e WHERE e.category = ?1
+
+35 Doctrine\ORM\Query\QueryException::dqlError("SELECT e FROM SKL\Post\Domain\Model\Post e WHERE e.category = ?1")
+34 Doctrine\ORM\Query\Parser::semanticalError("Class SKL\Post\Domain\Model\Post has no field or association named category", array|3|)
+33 Doctrine\ORM\Query\Parser::processDeferredPathExpressions(Doctrine\ORM\Query\AST\SelectStatement)
+32 Doctrine\ORM\Query\Parser::getAST()
+31 Doctrine\ORM\Query\Parser::parse()
+30 Doctrine\ORM\Query::_parse()
+29 Doctrine\ORM\Query::_doExecute()
+28 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+27 Doctrine\ORM\AbstractQuery::getResult()
+26 TYPO3\Flow\Persistence\Doctrine\Query_Original::getResult()
+25 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+24 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::offsetExists("title")
+23 TYPO3\Flow\Reflection\ObjectAccess::getPropertyInternal(TYPO3\Flow\Persistence\Doctrine\QueryResult, "title", FALSE, TRUE)
+22 TYPO3\Flow\Reflection\ObjectAccess::getProperty(TYPO3\Flow\Persistence\Doctrine\QueryResult, "title")
+21 TYPO3\Fluid\Core\Parser\SyntaxTree\ObjectAccessorNode_Original::getPropertyPath(TYPO3\Fluid\Core\ViewHelper\TemplateVariableContainer, "category.title", TYPO3\Fluid\Core\Rendering\RenderingContext)
+20 FluidCache_SKL_Post_Category_action_show_1f032bfa09c497743c44dece1c12bf1a362333c1::section_768e0c1c69573fb588f61f1308a015c11468e05f(TYPO3\Fluid\Core\Rendering\RenderingContext)
+19 TYPO3\Fluid\View\AbstractTemplateView::renderSection("Title", array|1|, FALSE)
+18 TYPO3\Fluid\ViewHelpers\RenderViewHelper_Original::render("Title", NULL, array|0|, FALSE)
+17 call_user_func_array(array|2|, array|4|)
+16 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+15 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+14 FluidCache_SKL_Post_layout_Default_3e26fbb3955b16ee6ac95a7d1a055f434eb27280::render(TYPO3\Fluid\Core\Rendering\RenderingContext)
+13 TYPO3\Fluid\View\AbstractTemplateView::render()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+11 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /skl.post/category/show?category%5B__identity%5D=6d5a3bcf-0d21-b8fc-7b85-f5e3ea2f73e0 HTTP/1.1
+Host: dev.flow-login.local
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://dev.flow-login.local/skl.post/category/index
+Connection: keep-alive
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]

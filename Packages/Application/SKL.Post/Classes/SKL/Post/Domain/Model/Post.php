@@ -19,10 +19,17 @@ class Post {
 	 */
 	protected $name;
 
-	/**
-	 * @var string
-	 */
-	protected $content;
+    /**
+     * @var string
+     * @ORM\Column(type="text")
+     */
+    protected $content;
+
+    /**
+     * @var \SKL\Post\Domain\Model\User
+     * @ORM\ManyToOne(inversedBy="posts")
+     */
+    protected $user;
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\SKL\Post\Domain\Model\Category> $categories
@@ -49,21 +56,6 @@ class Post {
 	 */
 	public function setName($name) {
 		$this->name = $name;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getContent() {
-		return $this->content;
-	}
-
-	/**
-	 * @param string $content
-	 * @return void
-	 */
-	public function setContent($content) {
-		$this->content = $content;
 	}
 
 	/**
@@ -96,5 +88,21 @@ class Post {
 	{
 		$this->authors = $authors;
 	}
+
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
 
 }

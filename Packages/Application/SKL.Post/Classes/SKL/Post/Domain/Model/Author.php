@@ -53,4 +53,20 @@ class Author {
 		$this->name = $name;
 	}
 
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $posts
+     */
+    public function setPosts($posts)
+    {
+        $this->posts = $posts;
+    }
+
 }

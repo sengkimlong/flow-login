@@ -254,7 +254,7 @@
             'host' => '127.0.0.1',
             'dbname' => 'post',
             'user' => 'root',
-            'password' => 'skl',
+            'password' => 'ess:3ntials',
             'charset' => 'utf8',
           ),
           'cacheAllQueryResults' => false,
@@ -406,8 +406,12 @@
           array (
             'providers' => 
             array (
+              'DefaultProvider' => 
+              array (
+                'provider' => 'PersistedUsernamePasswordProvider',
+              ),
             ),
-            'authenticationStrategy' => 'atLeastOneToken',
+            'authenticationStrategy' => 'oneToken',
           ),
           'authorization' => 
           array (
@@ -446,6 +450,7 @@
               ),
             ),
           ),
+          'enable' => true,
         ),
         'session' => 
         array (
@@ -762,23 +767,79 @@
       array (
         '@format' => 'html',
         '@package' => 'SKL.Post',
-        '@controller' => 'Category',
-        '@action' => 'index',
+        '@controller' => 'User',
+        '@action' => 'register',
       ),
     ),
     1 => 
     array (
-      'name' => 'Post :: Post',
-      'uriPattern' => 'posts/new',
+      'name' => 'Post :: Category',
+      'uriPattern' => 'category/{@action}/{category}',
+      'defaults' => 
+      array (
+        '@format' => 'html',
+        '@package' => 'SKL.Post',
+        '@controller' => 'Category',
+      ),
+      'routeParts' => 
+      array (
+        'category' => 
+        array (
+          'objectType' => 'SKL\\Post\\Domain\\Model\\Category',
+          'uriPattern' => '{title}',
+        ),
+      ),
+    ),
+    2 => 
+    array (
+      'name' => 'Post :: post',
+      'uriPattern' => 'post/{@action}/{post}',
       'defaults' => 
       array (
         '@format' => 'html',
         '@package' => 'SKL.Post',
         '@controller' => 'Post',
-        '@action' => 'new',
+      ),
+      'routeParts' => 
+      array (
+        'post' => 
+        array (
+          'objectType' => 'SKL\\Post\\Domain\\Model\\Post',
+          'uriPattern' => '{name}',
+        ),
       ),
     ),
-    2 => 
+    3 => 
+    array (
+      'name' => 'Post :: Author',
+      'uriPattern' => 'author/{@action}/{author}',
+      'defaults' => 
+      array (
+        '@format' => 'html',
+        '@package' => 'SKL.Post',
+        '@controller' => 'Author',
+      ),
+      'routeParts' => 
+      array (
+        'author' => 
+        array (
+          'objectType' => 'SKL\\Post\\Domain\\Model\\Author',
+          'uriPattern' => '{name}',
+        ),
+      ),
+    ),
+    4 => 
+    array (
+      'name' => 'Post :: post',
+      'uriPattern' => '{@controller}(/{@action})',
+      'defaults' => 
+      array (
+        '@format' => 'html',
+        '@action' => 'index',
+        '@package' => 'SKL.Post',
+      ),
+    ),
+    5 => 
     array (
       'name' => 'Online Question :: Welcome',
       'uriPattern' => '',
@@ -790,7 +851,7 @@
         '@action' => 'index',
       ),
     ),
-    3 => 
+    6 => 
     array (
       'name' => 'Online Question :: Form',
       'uriPattern' => 'forms',
@@ -802,7 +863,7 @@
         '@action' => 'index',
       ),
     ),
-    4 => 
+    7 => 
     array (
       'name' => 'Online Question :: Form action',
       'uriPattern' => 'forms/{form}',
@@ -822,7 +883,7 @@
         ),
       ),
     ),
-    5 => 
+    8 => 
     array (
       'name' => 'Online Question :: Form',
       'uriPattern' => 'profiles/{form}',
@@ -842,7 +903,7 @@
         ),
       ),
     ),
-    6 => 
+    9 => 
     array (
       'name' => 'Welcome :: Welcome screen',
       'uriPattern' => 'flow/welcome',
@@ -854,7 +915,7 @@
         '@format' => 'html',
       ),
     ),
-    7 => 
+    10 => 
     array (
       'name' => 'Welcome :: Redirect to welcome screen',
       'uriPattern' => '',
@@ -866,7 +927,7 @@
         '@format' => 'html',
       ),
     ),
-    8 => 
+    11 => 
     array (
       'name' => 'Flow :: default with action and format',
       'uriPattern' => '{@package}/{@controller}/{@action}(.{@format})',
@@ -876,7 +937,7 @@
       ),
       'appendExceedingArguments' => true,
     ),
-    9 => 
+    12 => 
     array (
       'name' => 'Flow :: default',
       'uriPattern' => '{@package}/{@controller}(/{@action})',
@@ -887,7 +948,7 @@
       ),
       'appendExceedingArguments' => true,
     ),
-    10 => 
+    13 => 
     array (
       'name' => 'Flow :: default with package',
       'uriPattern' => '{@package}',
@@ -899,7 +960,7 @@
       ),
       'appendExceedingArguments' => true,
     ),
-    11 => 
+    14 => 
     array (
       'name' => 'Flow :: fallback',
       'uriPattern' => '',
@@ -931,6 +992,42 @@
       'TYPO3.Flow:AuthenticatedUser' => 
       array (
         'abstract' => true,
+      ),
+      'SKL.Post:Visitor' => 
+      array (
+        'privileges' => 
+        array (
+          0 => 
+          array (
+            'privilegeTarget' => 'SKL.Post:ProfileActions',
+            'permission' => 'DENY',
+          ),
+        ),
+      ),
+      'SKL.Post:Admin' => 
+      array (
+        'privileges' => 
+        array (
+          0 => 
+          array (
+            'privilegeTarget' => 'SKL.Post:AdminAction',
+            'permission' => 'DENY',
+          ),
+        ),
+      ),
+    ),
+    'privilegeTargets' => 
+    array (
+      'TYPO3\\Flow\\Security\\Authorization\\Privilege\\Method\\MethodPrivilege' => 
+      array (
+        'SKL.Post:ProfileActions' => 
+        array (
+          'matcher' => 'method(SKL\\Post\\Controller\\CategoryController->deleteAction())',
+        ),
+        'SKL.Post:AdminAction' => 
+        array (
+          'matcher' => 'method(SKL\\Post\\Controller\\PostController->(create|edit)Action())',
+        ),
       ),
     ),
   ),

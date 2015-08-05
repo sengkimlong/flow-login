@@ -2,39 +2,86 @@
 
 <f:section name="Title">New post</f:section>
 
+<f:section name="Navigation">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MyBlog</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navigation">
+                <ul class="nav navbar-nav">
+                    <f:for each="{listCategories}" as="navCategory">
+                        <li>
+                            <f:link.action action="show" controller="category" arguments="{category: navCategory}">{navCategory.title}</f:link.action>
+                        </li>
+                    </f:for>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{usrname} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><f:link.action action="index" controller="User">Profile</f:link.action></li>
+                            <li><f:link.action action="logout" controller="Login">Logout</f:link.action></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</f:section>
+
+<f:section name="Sidebar">
+    <h3>Category: </h3>
+    <p><f:link.action action="index" controller="category">View Category</f:link.action></p>
+    <p><f:link.action action="new" controller="category">Create a new category</f:link.action></p>
+    <h3>Post: </h3>
+    <p><f:link.action action="index" controller="post">View Post</f:link.action></p>
+    <p><f:link.action action="new" controller="post">Create new post</f:link.action></p>
+    <h3>Author: </h3>
+    <p><f:link.action action="index" controller="author">View Author</f:link.action></p>
+    <p><f:link.action action="new" controller="author">Create New Author</f:link.action></p>
+</f:section>
+
 <f:section name="Content">
 	<p>Just fill out the following form to create a new post:</p>
 
 	<f:form action="create" objectName="newPost">
-		<table>
+		<table class="table">
 			<tr>
 				<td><label for="name">Title</label></td>
-				<td><f:form.textfield style="width:100%;" property="name" id="name" /></td>
+				<td><f:form.textfield class="form-control" style="width:100%;" property="name" id="name" placeholder="Type title..."/></td>
 			</tr>
 			<tr>
 				<td><label for="content">Content</label></td>
-				<td><f:form.textfield style="width:100%;" property="content" id="content" /></td>
+				<td><f:form.textarea class="form-control" style="width:100%;font-family:cursive;font-size: 11pt;height: 100px;" property="content" id="content" placeholder="Type something..." /></td>
 			</tr>
 			<tr>
+				<th>Choose category: </th>
 				<td>
-				<td>
-					<f:for each="{listCategory}" as="cat">
-						<label>{cat.title}
-							<f:form.checkbox property="categories" value="{cat.identity}" multiple="true" />
-						</label>
-					</f:for>
+					<f:for each="{listCategories}" as="cat">
+						<label class="checkbox-inline">
+							<f:form.checkbox property="categories" value="{cat.identity}" multiple="true" />{cat.title}
+                        </label>
+                    </f:for>
 				</td>
 				<!-- <f:form.select property="categories" optionLabelField="title" options="{listCategory}" size="3" prependOptionLabel="- select one -" multiple="true"/> -->
 			</tr>
 			<tr>
-				<td></td>
+				<th>Choose authors: </th>
 				<td>
-					<f:form.select style="width:100%;" property="authors" optionLabelField="name" options="{listAuthor}" size="3" prependOptionLabel="- select one -" multiple="true" />
+					<f:form.select style="width:100%;" property="authors" optionLabelField="name" options="{listAuthor}" size="3" prependOptionLabel="--Select one--" multiple="true" />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<f:form.submit value="Create" />
+					<f:form.submit class="btn btn-primary" value="Create" />
 				</td>
 			</tr>
 		</table>

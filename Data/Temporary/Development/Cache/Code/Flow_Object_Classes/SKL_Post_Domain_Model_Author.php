@@ -53,6 +53,22 @@ class Author_Original {
 		$this->name = $name;
 	}
 
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $posts
+     */
+    public function setPosts($posts)
+    {
+        $this->posts = $posts;
+    }
+
 }namespace SKL\Post\Domain\Model;
 
 use Doctrine\ORM\Mapping as ORM;

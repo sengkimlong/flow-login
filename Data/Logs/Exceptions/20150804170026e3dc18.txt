@@ -1,0 +1,27 @@
+Uncaught exception #1355480641 in line 480 of /var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Core/Booting/Scripts.php: No class schema found for "Doctrine\Common\Collections\Collection".
+The class should probably marked as entity or value object! This happened
+while examining "SKL\Post\Domain\Model\User"
+
+  Type: TYPO3\Flow\Persistence\Doctrine\Mapping\Exception\ClassSchemaNotFoundExcept
+        ion
+  Code: 1340185197
+  File: Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Flow_Persis
+        tence_Doctrine_Mapping_Driver_FlowAnnotationDriver.php
+  Line: 159
+
+Open Data/Logs/Exceptions/20150804170028cfdf4d.txt for a full stack trace.
+
+14 TYPO3\Flow\Core\Booting\Scripts::executeCommand("typo3.flow:doctrine:compileproxies", array|15|)
+13 TYPO3\Flow\Core\Booting\Scripts::compileDoctrineProxies(TYPO3\Flow\Core\Bootstrap)
+12 TYPO3\Flow\Core\Booting\Scripts::initializeProxyClasses(TYPO3\Flow\Core\Bootstrap)
+11 call_user_func(array|2|, TYPO3\Flow\Core\Bootstrap)
+10 TYPO3\Flow\Core\Booting\Step::__invoke(TYPO3\Flow\Core\Bootstrap)
+9 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+8 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+7 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+6 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+5 TYPO3\Flow\Core\Booting\Sequence::invoke(TYPO3\Flow\Core\Bootstrap)
+4 TYPO3\Flow\Cli\CommandRequestHandler::boot("Runtime")
+3 TYPO3\Flow\Cli\CommandRequestHandler::handleRequest()
+2 TYPO3\Flow\Core\Bootstrap::run()
+1 require("/var/www/html/flow-login/Packages/Framework/TYPO3.Flow/Scripts/flow.php")

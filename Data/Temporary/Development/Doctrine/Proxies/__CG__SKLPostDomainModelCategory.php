@@ -244,4 +244,26 @@ class Category extends \SKL\Post\Domain\Model\Category implements \Doctrine\ORM\
         return parent::setTitle($title);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getPosts()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPosts', array());
+
+        return parent::getPosts();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPosts($posts)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPosts', array($posts));
+
+        return parent::setPosts($posts);
+    }
+
 }

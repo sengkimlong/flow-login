@@ -1,37 +1,83 @@
+{namespace te=SKL\Post\ViewHelpers}
+
 <f:layout name="Default" />
 
-<f:section name="Title">Edit post "{post.name}"</f:section>
+<f:section name="Title">Edit post "{post.name}</f:section>
+
+<f:section name="Navigation">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MyBlog</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navigation">
+                <ul class="nav navbar-nav">
+                    <f:for each="{listCategories}" as="navCategory">
+                        <li>
+                            <f:link.action action="show" controller="category" arguments="{category: navCategory}">{navCategory.title}</f:link.action>
+                        </li>
+                    </f:for>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{usrname} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><f:link.action action="index" controller="User">Profile</f:link.action></li>
+                            <li><f:link.action action="logout" controller="Login">Logout</f:link.action></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</f:section>
+
+<f:section name="Sidebar">
+    <h3>Category: </h3>
+    <p><f:link.action action="index" controller="category">View Category</f:link.action></p>
+    <p><f:link.action action="new" controller="category">Create a new category</f:link.action></p>
+    <h3>Post: </h3>
+    <p><f:link.action action="index" controller="post">View Post</f:link.action></p>
+    <p><f:link.action action="new" controller="post">Create new post</f:link.action></p>
+    <h3>Author: </h3>
+    <p><f:link.action action="index" controller="author">View Author</f:link.action></p>
+    <p><f:link.action action="new" controller="author">Create New Author</f:link.action></p>
+</f:section>
 
 <f:section name="Content">
 	<f:form action="update" object="{post}" objectName="post">
-		<table>
+		<table class="table">
 			<tr>
 				<td><label for="name">Name</label></td>
-				<td><f:form.textfield property="name" id="name" /></td>
+				<td><f:form.textfield class="form-control" property="name" id="name" /></td>
 			</tr>
+            <tr>
+                <td><label for="content">Content</label></td>
+                <td><f:form.textarea class="form-control" style="width:100%;font-family:cursive;font-size: 11pt;height: 100px;" property="content" id="content" /></td>
+            </tr>
 			<tr>
-				<td></td>
+				<th>Update Category: </th>
 				<td>
-					<f:for each="{listCategory}" as="cat" key="number">
-
-						<!--<label>{cat.title}-->
-							<!--<f:form.checkbox property="categories" value="{cat}" multiple="true" checked="{post.categories}" />-->
-						<!--</label>-->
-                        <f:debug title="Test">
-
-                        </f:debug>
-
+					<f:for each="{listCategories}" as="category" >
+                        {category.title} <f:form.checkbox property="categories" id="category" value="{category.identity}" checked="<te:checkCategoryInPost post='{post}' category='{category}' />" multiple="true" />
 					</f:for>
 				</td>
 			</tr>
 			<tr>
-				<td></td>
+				<th>Update Author: </th>
 				<td>
 					<f:form.select property="authors" optionLabelField="name" options="{listAuthor}" size="3" prependOptionLabel="-Select One-" multiple="true" />
 				</td>
 			</tr>
 			<tr>
-				<td><f:form.submit value="Update" /></td>
+				<td><f:form.submit class="btn btn-primary" value="Update" /></td>
 			</tr>
 		</table>
 	</f:form>

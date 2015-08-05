@@ -1,0 +1,43 @@
+<f:layout name="Default.html" />
+
+<f:section name="Title" />
+
+<f:section name="Navigation" />
+
+<f:section name="Sidebar" />
+
+
+<f:section name="Content">
+    <h1>Login</h1>
+
+    <f:flashMessages />
+
+    <f:security.ifHasRole role="Visitor">
+        <f:then>
+            <f:link.action action="logout" controller="Login">Logout</f:link.action>
+        </f:then>
+        <f:else>
+            <f:form action="authenticate" method="post" name="loginform">
+                <div class="col-md-7 center">
+                    <table class="table">
+                        <tr>
+                            <td>User: </td>
+                            <td><f:form.textfield class="form-control" name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" /></td>
+                        </tr>
+                        <tr>
+                            <td>Password: </td>
+                            <td><f:form.password class="form-control" name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" /></td>
+                        </tr>
+                        <tr>
+                            <td><f:form.submit value="Login" /></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </f:form>
+            <br />
+            Not yet an account? <f:link.action action="register" controller="Login">Register here!!</f:link.action>
+        </f:else>
+    </f:security.ifHasRole>
+
+</f:section>

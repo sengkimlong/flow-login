@@ -4,5 +4,5 @@ TYPO3:
       backendOptions:
         dbname: 'onlineSurvey'
         user: 'root'
-        password: 'skl'
-        host: '127.0.0.1'
+        password: 'ess:3ntials'
+        host: 'localhost'

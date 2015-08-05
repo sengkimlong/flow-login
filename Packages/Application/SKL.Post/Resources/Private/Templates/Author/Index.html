@@ -2,20 +2,69 @@
 
 <f:section name="Title">A list of authors</f:section>
 
+<f:section name="Navigation">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MyBlog</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navigation">
+                <ul class="nav navbar-nav">
+                    <f:for each="{listCategories}" as="navCategory">
+                        <li>
+                            <f:link.action action="show" controller="category" arguments="{category: navCategory}">{navCategory.title}</f:link.action>
+                        </li>
+                    </f:for>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{usrname} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><f:link.action action="index" controller="User">Profile</f:link.action></li>
+                            <li><f:link.action action="logout" controller="Login">Logout</f:link.action></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</f:section>
+
+<f:section name="Sidebar">
+    <h3>Category: </h3>
+    <p><f:link.action action="index" controller="category">View Category</f:link.action></p>
+    <p><f:link.action action="new" controller="category">Create a new category</f:link.action></p>
+    <h3>Post: </h3>
+    <p><f:link.action action="index" controller="post">View Post</f:link.action></p>
+    <p><f:link.action action="new" controller="post">Create new post</f:link.action></p>
+    <h3>Author: </h3>
+    <p><f:link.action action="index" controller="author">View Author</f:link.action></p>
+    <p><f:link.action action="new" controller="author">Create New Author</f:link.action></p>
+</f:section>
+
 <f:section name="Content">
 	<f:if condition="{authors}">
 		<f:then>
-			<ul>
+			<table class="table">
 				<f:for each="{authors}" as="author">
-					<li>
-						<f:link.action action="show" arguments="{author: author}">{author.name}</f:link.action>
-						<f:link.action action="edit" arguments="{author: author}">Edit</f:link.action>
-						<f:form action="delete" arguments="{author: author}">
-							<f:form.submit value="Delete" />
-						</f:form>
-					</li>
+					<tr>
+						<td><f:link.action action="show" arguments="{author: author}">{author.name}</f:link.action></td>
+						<td><f:link.action action="edit" arguments="{author: author}">Edit</f:link.action></td>
+						<td>
+                            <f:form action="delete" arguments="{author: author}">
+							    <f:form.submit value="Delete" />
+						    </f:form>
+                        </td>
+					</tr>
 				</f:for>
-			</ul>
+			</table>
 		</f:then>
 		<f:else>
 			<p>No authors created yet.</p>

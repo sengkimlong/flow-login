@@ -1,0 +1,21 @@
+privilegeTargets:
+  'TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+
+    'SKL.Post:ProfileActions':
+      matcher: 'method(SKL\Post\Controller\CategoryController->deleteAction())'
+
+    'SKL.Post:AdminAction':
+      matcher: 'method(SKL\Post\Controller\PostController->(create|edit)Action())'
+
+roles:
+  'SKL.Post:Visitor':
+    privileges:
+      -
+        privilegeTarget: 'SKL.Post:ProfileActions'
+        permission: DENY
+
+  'SKL.Post:Admin':
+      privileges:
+        -
+          privilegeTarget: 'SKL.Post:AdminAction'
+          permission: DENY

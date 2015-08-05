@@ -236,28 +236,6 @@ class Post extends \SKL\Post\Domain\Model\Post implements \Doctrine\ORM\Proxy\Pr
     /**
      * {@inheritDoc}
      */
-    public function getContent()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getContent', array());
-
-        return parent::getContent();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setContent($content)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setContent', array($content));
-
-        return parent::setContent($content);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getCategories()
     {
 
@@ -297,6 +275,28 @@ class Post extends \SKL\Post\Domain\Model\Post implements \Doctrine\ORM\Proxy\Pr
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAuthors', array($authors));
 
         return parent::setAuthors($authors);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getContent()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getContent', array());
+
+        return parent::getContent();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setContent($content)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setContent', array($content));
+
+        return parent::setContent($content);
     }
 
 }

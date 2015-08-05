@@ -1,0 +1,103 @@
+Uncaught exception in line 116 of /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php: An exception occurred while executing 'INSERT INTO typo3_flow_security_account (persistence_object_identifier, accountidentifier, authenticationprovidername, credentialssource, creationdate, expirationdate, roleidentifiers) VALUES (?, ?, ?, ?, ?, ?, ?)' with params ["07ef5ca9-4bf6-fbb3-73e7-dd3bf6bc6e74", "thearith", "DefaultProvider", "bcrypt=>$2a$14$.Qsiz6IAyVk57TTBqhg5O.xiHCNOWr\/GJD0DGCz.mq1LpY\/33ddim", "2015-08-04 09:31:47", null, "SKL.Post:Visitor"]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'thearith-DefaultProvider' for key 'flow_identity_typo3_flow_security_account'
+
+25 Doctrine\DBAL\Driver\AbstractMySQLDriver::convertException("An exception occurred while executing 'INSERT INTO typo3_flow_security_account (persistence_object_identifier, accountidentifier, authenticationprovidername, credentialssource, creationdate, expirationdate, roleidentifiers) VALUES (?, ?, ?, ?, ?, ?, ?)' with params ["07ef5ca9-4bf6-fbb3-73e7-dd3bf6bc6e74", "thearith", "DefaultProvider", "bcrypt=>$2a$14$.Qsiz6IAyVk57TTBqhg5O.xiHCNOWr\/GJD0DGCz.mq1LpY\/33ddim", "2015-08-04 09:31:47", null, "SKL.Post:Visitor"]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'thearith-DefaultProvider' for key 'flow_identity_typo3_flow_security_account'", Doctrine\DBAL\Driver\PDOException)
+24 Doctrine\DBAL\DBALException::driverExceptionDuringQuery(Doctrine\DBAL\Driver\PDOMySql\Driver, Doctrine\DBAL\Driver\PDOException, "INSERT INTO typo3_flow_security_account (persistence_object_identifier, accountidentifier, authenticationprovidername, credentialssource, creationdate, expirationdate, roleidentifiers) VALUES (?, ?, ?, ?, ?, ?, ?)", array|7|)
+23 Doctrine\DBAL\Statement::execute()
+22 Doctrine\ORM\Persisters\BasicEntityPersister::executeInserts()
+21 Doctrine\ORM\UnitOfWork::executeInserts(TYPO3\Flow\Persistence\Doctrine\Mapping\ClassMetadata)
+20 Doctrine\ORM\UnitOfWork::commit(NULL)
+19 Doctrine\ORM\EntityManager::flush()
+18 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::persistAll()
+17 TYPO3\Flow\Package::TYPO3\Flow\{closure}(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\LoginController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+16 Closure::__invoke(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\LoginController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+15 call_user_func_array(array|2|, array|4|)
+14 TYPO3\Flow\SignalSlot\Dispatcher::dispatch("TYPO3\Flow\Mvc\Dispatcher", "afterControllerInvocation", array|3|)
+13 TYPO3\Flow\SignalSlot\SignalAspect_Original::forwardSignalToDispatcher(TYPO3\Flow\Aop\JoinPoint)
+12 TYPO3\Flow\Aop\Advice\AbstractAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+11 TYPO3\Flow\Mvc\Dispatcher::emitAfterControllerInvocation(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\LoginController)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+Previous exception: Uncaught exception #23000 in line 165 of /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Statement.php: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'thearith-DefaultProvider' for key 'flow_identity_typo3_flow_security_account'
+
+24 Doctrine\DBAL\Driver\PDOStatement::execute(NULL)
+23 Doctrine\DBAL\Statement::execute()
+22 Doctrine\ORM\Persisters\BasicEntityPersister::executeInserts()
+21 Doctrine\ORM\UnitOfWork::executeInserts(TYPO3\Flow\Persistence\Doctrine\Mapping\ClassMetadata)
+20 Doctrine\ORM\UnitOfWork::commit(NULL)
+19 Doctrine\ORM\EntityManager::flush()
+18 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::persistAll()
+17 TYPO3\Flow\Package::TYPO3\Flow\{closure}(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\LoginController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+16 Closure::__invoke(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\LoginController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+15 call_user_func_array(array|2|, array|4|)
+14 TYPO3\Flow\SignalSlot\Dispatcher::dispatch("TYPO3\Flow\Mvc\Dispatcher", "afterControllerInvocation", array|3|)
+13 TYPO3\Flow\SignalSlot\SignalAspect_Original::forwardSignalToDispatcher(TYPO3\Flow\Aop\JoinPoint)
+12 TYPO3\Flow\Aop\Advice\AbstractAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+11 TYPO3\Flow\Mvc\Dispatcher::emitAfterControllerInvocation(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\LoginController)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+Previous exception: Uncaught exception #23000 in line 91 of /var/www/html/flow-login/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'thearith-DefaultProvider' for key 'flow_identity_typo3_flow_security_account'
+
+25 PDOStatement::execute(NULL)
+24 Doctrine\DBAL\Driver\PDOStatement::execute(NULL)
+23 Doctrine\DBAL\Statement::execute()
+22 Doctrine\ORM\Persisters\BasicEntityPersister::executeInserts()
+21 Doctrine\ORM\UnitOfWork::executeInserts(TYPO3\Flow\Persistence\Doctrine\Mapping\ClassMetadata)
+20 Doctrine\ORM\UnitOfWork::commit(NULL)
+19 Doctrine\ORM\EntityManager::flush()
+18 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::persistAll()
+17 TYPO3\Flow\Package::TYPO3\Flow\{closure}(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\LoginController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+16 Closure::__invoke(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\LoginController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+15 call_user_func_array(array|2|, array|4|)
+14 TYPO3\Flow\SignalSlot\Dispatcher::dispatch("TYPO3\Flow\Mvc\Dispatcher", "afterControllerInvocation", array|3|)
+13 TYPO3\Flow\SignalSlot\SignalAspect_Original::forwardSignalToDispatcher(TYPO3\Flow\Aop\JoinPoint)
+12 TYPO3\Flow\Aop\Advice\AbstractAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+11 TYPO3\Flow\Mvc\Dispatcher::emitAfterControllerInvocation(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, SKL\Post\Controller\LoginController)
+10 TYPO3\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+8 call_user_func_array(array|2|, array|2|)
+7 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::__call("dispatch", array|2|)
+6 TYPO3\Flow\Object\DependencyInjection\DependencyProxy::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+5 TYPO3\Flow\Mvc\DispatchComponent_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+4 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+3 TYPO3\Flow\Http\Component\ComponentChain_Original::handle(TYPO3\Flow\Http\Component\ComponentContext)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /login/create HTTP/1.1
+Host: dev.flow-login.local
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://dev.flow-login.local/
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 430
+
+__referrer%5B%40package%5D=SKL.Post&__referrer%5B%40subpackage%5D=&__referrer%5B%40controller%5D=Login&__referrer%5B%40action%5D=register&__referrer%5Barguments%5D=YTowOnt9d995007259979de310b21fd9e9314f34475f1794&__trustedProperties=a%3A4%3A%7Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A4%3A%22pass%22%3Bi%3A1%3Bs%3A5%3A%22pass2%22%3Bi%3A1%3Bi%3A0%3Bi%3A1%3B%7D56ed26e91bcd8b335b815218ecbe51768011b33a&name=thearith&pass=skl123&pass2=skl123
+
+HTTP RESPONSE:
+<html><head><meta http-equiv="refresh" content="0;url=http://dev.flow-login.local/login"/></head></html>
